@@ -4,6 +4,8 @@ A self-contained, browser-only educational tool for exploring indicative IFRS 18
 
 The site has no backend, cookies, analytics, external libraries or external fonts. All user inputs and calculations remain in the browser.
 
+Users can download a local JSON working file and load it later to restore their inputs. Refreshing or closing the page does not preserve an entered scenario unless that working file has been saved.
+
 ## Local preview
 
 Open `index.html` directly, or run a small local static server:
@@ -40,7 +42,7 @@ git push -u origin main
 
 - Open each of the four example profiles and confirm the expected specified-main-business-activity flags.
 - Confirm the footer reports all embedded checks as passed.
-- Test the JSON and CSV downloads.
+- Test saving and restoring a JSON working file, plus the CSV download.
 - Print or save the results view as PDF.
 - Check the page at mobile and desktop widths.
 - Confirm the Gerrit Heyneke link opens the intended LinkedIn profile.

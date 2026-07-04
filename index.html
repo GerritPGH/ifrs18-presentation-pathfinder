@@ -121,12 +121,36 @@
       align-items: center;
       gap: 8px;
       margin: 0;
+      padding: 7px 10px;
       color: var(--ink-soft);
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 999px;
       font-size: 0.86rem;
       font-weight: 650;
+      transition: color 150ms ease, background 150ms ease, border-color 150ms ease;
+    }
+
+    .privacy-note:hover {
+      color: var(--forest);
+      background: rgba(255, 255, 255, 0.5);
+      border-color: var(--line-dark);
     }
 
     .privacy-note svg { color: var(--forest-2); }
+
+    .privacy-note .info-dot {
+      display: grid;
+      width: 17px;
+      height: 17px;
+      place-items: center;
+      color: var(--forest);
+      background: var(--mint);
+      border-radius: 50%;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
 
     .hero {
       display: grid;
@@ -848,6 +872,124 @@
     .test-status.failed { color: #ffd4ca; }
     .test-status.failed::before { background: #e98474; }
 
+    .privacy-dialog {
+      width: min(680px, calc(100% - 28px));
+      max-height: min(760px, calc(100vh - 28px));
+      padding: 0;
+      overflow: auto;
+      color: var(--ink);
+      background: var(--surface);
+      border: 0;
+      border-radius: var(--radius-xl);
+      box-shadow: 0 30px 100px rgba(10, 31, 27, 0.32);
+    }
+
+    .privacy-dialog::backdrop {
+      background: rgba(10, 31, 27, 0.62);
+      backdrop-filter: blur(5px);
+    }
+
+    .dialog-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: start;
+      padding: 29px 31px;
+      color: white;
+      background: var(--forest);
+    }
+
+    .dialog-kicker {
+      margin-bottom: 8px;
+      color: #b9dfcb;
+      font-size: 0.7rem;
+      font-weight: 820;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .dialog-header h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+    }
+
+    .dialog-close {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      padding: 0;
+      color: white;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    .dialog-close:hover { background: rgba(255, 255, 255, 0.16); }
+
+    .dialog-body { padding: 28px 31px 31px; }
+
+    .dialog-lead {
+      margin-bottom: 22px;
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.58;
+    }
+
+    .privacy-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 19px;
+    }
+
+    .privacy-point {
+      padding: 16px;
+      background: var(--mint-soft);
+      border: 1px solid rgba(34, 91, 82, 0.12);
+      border-radius: 12px;
+    }
+
+    .privacy-point b {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--forest);
+      font-size: 0.84rem;
+    }
+
+    .privacy-point span {
+      display: block;
+      color: var(--ink-soft);
+      font-size: 0.75rem;
+      line-height: 1.42;
+    }
+
+    .privacy-caution {
+      margin-bottom: 22px;
+      padding: 14px 16px;
+      color: #5d451f;
+      background: var(--amber-soft);
+      border-left: 3px solid var(--amber);
+      border-radius: 8px;
+      font-size: 0.77rem;
+      line-height: 1.5;
+    }
+
+    .dialog-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      align-items: center;
+    }
+
+    .dialog-actions .primary { margin-right: auto; }
+
     .toast {
       position: fixed;
       z-index: 50;
@@ -881,7 +1023,8 @@
     @media (max-width: 720px) {
       .shell { width: min(calc(100% - 24px), var(--max)); }
       .site-header { padding: 18px 0; }
-      .privacy-note span { display: none; }
+      .privacy-note .privacy-label { display: none; }
+      .privacy-note { padding: 8px; }
       .hero { padding: 42px 0 58px; }
       h1 { font-size: clamp(3rem, 15vw, 5.2rem); }
       .process-strip { grid-template-columns: 1fr; }
@@ -896,6 +1039,9 @@
       .form-actions .primary { width: 100%; margin: 0; }
       .footer-inner { align-items: flex-start; flex-direction: column; }
       .footer-meta { justify-content: flex-start; }
+      .privacy-points { grid-template-columns: 1fr; }
+      .dialog-header, .dialog-body { padding: 23px; }
+      .dialog-actions .primary { width: 100%; margin: 0; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -928,10 +1074,11 @@
         <span class="brand-mark" aria-hidden="true">GH</span>
         Gerrit Heyneke
       </a>
-      <p class="privacy-note">
+      <button class="privacy-note" type="button" id="privacyButton" aria-haspopup="dialog" aria-controls="privacyDialog">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3"/><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M12 14v3"/></svg>
-        <span>Your data stays in this browser</span>
-      </p>
+        <span class="privacy-label">Your data stays in this browser</span>
+        <span class="info-dot" aria-hidden="true">i</span>
+      </button>
     </div>
   </header>
 
@@ -1138,7 +1285,8 @@
           <div class="form-actions">
             <button class="button primary" type="button" id="viewResultsButton">Review the result</button>
             <button class="button quiet" type="button" id="resetButton">Reset</button>
-            <button class="button quiet" type="button" id="exportJsonButton">Export JSON</button>
+            <button class="button quiet" type="button" id="exportJsonButton">Save working file</button>
+            <button class="button quiet" type="button" id="loadWorkingFileButton">Load working file</button>
             <button class="button quiet" type="button" id="exportCsvButton">Export CSV</button>
             <button class="button quiet" type="button" id="printButton">Print view</button>
           </div>
@@ -1178,7 +1326,7 @@
         <div class="results-toolbar">
           <p id="resultsTimestamp">Results update in real time.</p>
           <div class="button-row">
-            <button class="button quiet" type="button" id="resultsJsonButton">Export JSON</button>
+            <button class="button quiet" type="button" id="resultsJsonButton">Save working file</button>
             <button class="button quiet" type="button" id="resultsPrintButton">Print view</button>
           </div>
         </div>
@@ -1233,6 +1381,40 @@
     </div>
   </footer>
 
+  <dialog class="privacy-dialog" id="privacyDialog" aria-labelledby="privacyDialogTitle">
+    <div class="dialog-header">
+      <div>
+        <p class="dialog-kicker">Privacy and local files</p>
+        <h2 id="privacyDialogTitle">Your figures do not leave this browser.</h2>
+      </div>
+      <button class="dialog-close" type="button" id="privacyCloseButton" aria-label="Close privacy explainer">×</button>
+    </div>
+    <div class="dialog-body">
+      <p class="dialog-lead">The tool performs every calculation on your device. It has no account, database, analytics, cookies or server endpoint that receives your entries, so the site operator cannot view or recover the scenario you enter.</p>
+      <div class="privacy-points">
+        <div class="privacy-point">
+          <b>While you work</b>
+          <span>Your entries exist only in the open page in your browser.</span>
+        </div>
+        <div class="privacy-point">
+          <b>After a refresh</b>
+          <span>Your entered scenario is cleared and the example defaults load again.</span>
+        </div>
+        <div class="privacy-point">
+          <b>To continue later</b>
+          <span>Save a working file locally, then load it back into the tool.</span>
+        </div>
+      </div>
+      <p class="privacy-caution"><strong>Keep the file appropriately.</strong> A downloaded working file contains the figures and answers you entered. Anyone who can access that file or your unlocked device may be able to read it. Files placed in OneDrive, iCloud, Dropbox or another synced folder follow that provider’s privacy and access settings.</p>
+      <div class="dialog-actions">
+        <button class="button primary" type="button" id="privacySaveButton">Download working file</button>
+        <button class="button secondary" type="button" id="privacyLoadButton">Load a saved file</button>
+        <button class="button quiet" type="button" id="privacyDoneButton">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <input type="file" id="workingFileInput" accept=".json,application/json" hidden>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
@@ -1828,6 +2010,8 @@
     function exportPayload() {
       const result = analyse();
       return {
+        format: "ifrs18-presentation-pathfinder-working-file",
+        format_version: 1,
         tool: "IFRS 18 Presentation Pathfinder",
         generated_at: new Date().toISOString(),
         rules_version: RULES.version,
@@ -1882,7 +2066,110 @@
     }
 
     function exportJson() {
-      download("ifrs18-presentation-pathfinder.json", JSON.stringify(exportPayload(), null, 2), "application/json");
+      download("ifrs18-pathfinder-working-file.json", JSON.stringify(exportPayload(), null, 2), "application/json");
+    }
+
+    function normaliseWorkingFile(payload) {
+      const inputs = payload?.inputs ?? payload;
+      if (!inputs || typeof inputs !== "object" || Array.isArray(inputs)) {
+        throw new Error("The file does not contain a valid input set.");
+      }
+
+      const sourceAmounts = inputs.line_items ?? inputs.amounts;
+      if (!sourceAmounts || typeof sourceAmounts !== "object" || Array.isArray(sourceAmounts)) {
+        throw new Error("The file does not contain line-item amounts.");
+      }
+
+      const allowedProfile = Object.hasOwn(PRESETS, inputs.entity_profile) ? inputs.entity_profile : "custom";
+      const allowedSfp = ["current_noncurrent", "liquidity", "mixed"].includes(inputs.sfp_presentation)
+        ? inputs.sfp_presentation
+        : "current_noncurrent";
+      const allowedExpense = ["nature", "function", "mixed"].includes(inputs.operating_expense_presentation)
+        ? inputs.operating_expense_presentation
+        : "function";
+      const allowedPolicy = ["split", "all_operating"].includes(inputs.financing_liability_policy)
+        ? inputs.financing_liability_policy
+        : "split";
+      const allowedUnit = ["£000", "€000", "$000", "units"].includes(inputs.amount_unit)
+        ? inputs.amount_unit
+        : "£000";
+
+      const amounts = Object.fromEntries(LINE_ITEM_RULES.map(item => {
+        const value = Number(sourceAmounts[item.id]);
+        return [item.id, Number.isFinite(value) ? value : 0];
+      }));
+
+      return {
+        profile: allowedProfile,
+        invests: Boolean(inputs.invests_in_assets_as_main_business_activity),
+        finances: Boolean(inputs.provides_financing_to_customers_as_main_business_activity),
+        sfp: allowedSfp,
+        expense: allowedExpense,
+        financingPolicy: allowedPolicy,
+        indirect: Boolean(inputs.uses_indirect_cash_flow_method),
+        mpm: Boolean(inputs.uses_mpm_in_public_communications),
+        mpmLabel: typeof inputs.mpm_label === "string" ? inputs.mpm_label.slice(0, 80) : "Adjusted operating profit",
+        eps: Boolean(inputs.discloses_additional_eps),
+        firstYear: Boolean(inputs.is_first_year_of_ifrs18_application),
+        interim: Boolean(inputs.uses_interim_reporting),
+        xbrl: Boolean(inputs.uses_xbrl),
+        unit: allowedUnit,
+        amounts
+      };
+    }
+
+    function applyWorkingFile(payload) {
+      const data = normaliseWorkingFile(payload);
+      $("#entityProfile").value = data.profile;
+      $("#investsMain").checked = data.invests;
+      $("#financesMain").checked = data.finances;
+      $("#sfpPresentation").value = data.sfp;
+      $("#financingPolicy").value = data.financingPolicy;
+      setRadio("operating_expense_presentation", data.expense);
+      $("#indirectCashFlow").checked = data.indirect;
+      $("#usesMpm").checked = data.mpm;
+      $("#mpmLabel").value = data.mpmLabel;
+      $("#additionalEps").checked = data.eps;
+      $("#firstYear").checked = data.firstYear;
+      $("#interimReporting").checked = data.interim;
+      $("#xbrlReporting").checked = data.xbrl;
+      $("#amountUnit").value = data.unit;
+      LINE_ITEM_RULES.forEach(item => {
+        const input = document.getElementById(`amount_${item.id}`);
+        if (input) input.value = data.amounts[item.id];
+      });
+      renderAll();
+      return data;
+    }
+
+    async function loadWorkingFile(event) {
+      const input = event.currentTarget;
+      const file = input.files?.[0];
+      if (!file) return;
+
+      try {
+        if (file.size > 2_000_000) throw new Error("The selected file is too large.");
+        const payload = JSON.parse(await file.text());
+        applyWorkingFile(payload);
+        $("#privacyDialog").close();
+        showToast(`${file.name} loaded locally.`);
+      } catch (error) {
+        showToast(`Could not load the working file: ${error.message}`);
+      } finally {
+        input.value = "";
+      }
+    }
+
+    function chooseWorkingFile() {
+      $("#workingFileInput").click();
+    }
+
+    function openPrivacyDialog() {
+      $("#privacyDialog").showModal();
+    }
+
+    function closePrivacyDialog() {
+      $("#privacyDialog").close();
     }
 
     function csvCell(value) {
@@ -1918,9 +2205,19 @@
       $("#resetButton").addEventListener("click", resetAssessment);
       $("#exportJsonButton").addEventListener("click", exportJson);
       $("#resultsJsonButton").addEventListener("click", exportJson);
+      $("#loadWorkingFileButton").addEventListener("click", chooseWorkingFile);
       $("#exportCsvButton").addEventListener("click", exportCsv);
       $("#printButton").addEventListener("click", () => window.print());
       $("#resultsPrintButton").addEventListener("click", () => window.print());
+      $("#privacyButton").addEventListener("click", openPrivacyDialog);
+      $("#privacyCloseButton").addEventListener("click", closePrivacyDialog);
+      $("#privacyDoneButton").addEventListener("click", closePrivacyDialog);
+      $("#privacySaveButton").addEventListener("click", exportJson);
+      $("#privacyLoadButton").addEventListener("click", chooseWorkingFile);
+      $("#workingFileInput").addEventListener("change", loadWorkingFile);
+      $("#privacyDialog").addEventListener("click", event => {
+        if (event.target === $("#privacyDialog")) closePrivacyDialog();
+      });
       $("#entityProfile").addEventListener("change", event => {
         if (event.target.value !== "custom") showToast("Select “Load example” to replace the current answers.");
       });
@@ -1982,6 +2279,33 @@
       {
         name: "Blank and zero inputs produce finite totals",
         run: () => Object.values(analyse(testData()).totals).every(Number.isFinite)
+      },
+      {
+        name: "Saved working files restore profile and line-item values",
+        run: () => {
+          const restored = normaliseWorkingFile({
+            inputs: {
+              entity_profile: "bank",
+              operating_expense_presentation: "nature",
+              sfp_presentation: "liquidity",
+              financing_liability_policy: "all_operating",
+              amount_unit: "£000",
+              line_items: { revenue: 321 }
+            }
+          });
+          return restored.profile === "bank" && restored.amounts.revenue === 321;
+        }
+      },
+      {
+        name: "Invalid working files are rejected",
+        run: () => {
+          try {
+            normaliseWorkingFile({ inputs: {} });
+            return false;
+          } catch {
+            return true;
+          }
+        }
       }
     ];
 
