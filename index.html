@@ -1414,7 +1414,7 @@
             <p id="snapshotDescription">No specified main business activity selected.</p>
           </div>
           <div class="snapshot-body" aria-live="polite">
-            <div class="snapshot-metric"><span>Operating profit</span><b id="snapshotOperating">—</b></div>
+            <div class="snapshot-metric"><span id="snapshotOperatingLabel">Operating profit (£000)</span><b id="snapshotOperating">—</b></div>
             <div class="snapshot-metric"><span>PBFIT subtotal</span><b id="snapshotPbfit">Required</b></div>
             <div class="snapshot-metric"><span>Triggered disclosures</span><b id="snapshotDisclosures">0</b></div>
             <div class="snapshot-metric"><span>Critical actions</span><b id="snapshotActions">0</b></div>
@@ -2309,7 +2309,8 @@
         ? `${specified.join(" and ")} selected as ${specified.length > 1 ? "specified main business activities" : "a specified main business activity"}.`
         : "No specified main business activity selected.";
       $("#snapshotDescription").textContent = `${preset.description} ${activityDescription}`;
-      $("#snapshotOperating").textContent = nonZero ? formatNumber(result.operatingProfit, result.data.unit) : "—";
+      $("#snapshotOperatingLabel").textContent = `Operating profit (${result.data.unit})`;
+      $("#snapshotOperating").textContent = nonZero ? formatNumber(result.operatingProfit, result.data.unit, false) : "—";
       $("#snapshotPbfit").textContent = result.omitPbfit ? "Not applied" : "Required";
       $("#snapshotDisclosures").textContent = String(triggered);
       $("#snapshotActions").textContent = String(critical);
