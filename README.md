@@ -2,6 +2,8 @@
 
 A self-contained, browser-only educational tool for exploring indicative IFRS 18 statement of profit or loss categories, disclosure changes and implementation priorities.
 
+The profile library is Channel Islands-first: fund administrators and trust companies, alternative and real estate funds, GP/LP structures, PCCs and cell companies, plus local operating and public-interest organisations. The original manufacturer, manufacturer-financing, insurer and bank baselines remain available.
+
 The site has no backend, cookies, analytics, external libraries or external fonts. All user inputs and calculations remain in the browser.
 
 Users can download a local JSON working file and load it later to restore their inputs. Refreshing or closing the page does not preserve an entered scenario unless that working file has been saved.

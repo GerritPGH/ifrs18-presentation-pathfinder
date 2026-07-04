@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A private, browser-based IFRS 18 presentation readiness tool. Explore indicative statement categories, disclosure changes and a tailored implementation checklist.">
+  <meta name="description" content="A Channel Islands-focused, browser-based IFRS 18 readiness tool for funds, financial services, structured vehicles and operating businesses.">
   <meta name="theme-color" content="#173f3a">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23173f3a'/%3E%3Ctext x='32' y='39' fill='white' text-anchor='middle' font-family='Georgia,serif' font-size='22'%3EGH%3C/text%3E%3C/svg%3E">
   <title>IFRS 18 Presentation Pathfinder · Gerrit Heyneke</title>
@@ -1085,21 +1085,21 @@
   <main>
     <section class="shell hero" aria-labelledby="hero-title">
       <div>
-        <p class="eyebrow">IFRS 18 · Presentation readiness</p>
+        <p class="eyebrow">Channel Islands · IFRS 18 readiness</p>
         <h1 id="hero-title">Find the shape of your 2027 statement.</h1>
-        <p class="hero-copy">Turn a current presentation profile into an indicative IFRS 18 structure, disclosure delta and prioritised implementation plan—in a few thoughtful minutes.</p>
+        <p class="hero-copy">Built first for Channel Islands financial services—fund administrators, trust companies, alternative funds and structured vehicles—without losing the manufacturing and operating-business cases that make the comparison useful.</p>
         <div class="button-row">
           <a class="button primary" href="#assessment-section">
             Start the assessment
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <button class="button secondary" type="button" id="heroPresetButton">See a manufacturer example</button>
+          <button class="button secondary" type="button" id="heroPresetButton">See a fund administrator example</button>
         </div>
       </div>
       <aside class="hero-aside" aria-label="IFRS 18 overview">
         <p class="hero-aside-label">What the tool covers</p>
         <div class="hero-stat"><b>5</b><span>profit or loss categories applied to your indicative inputs</span></div>
-        <div class="hero-stat"><b>4</b><span>industry profiles based on the implementation asset pack</span></div>
+        <div class="hero-stat"><b>14</b><span>financial-services, local-business and baseline profiles</span></div>
         <div class="hero-stat"><b>3</b><span>practical outputs: structure, disclosure delta and next actions</span></div>
       </aside>
     </section>
@@ -1148,10 +1148,26 @@
                   <div>
                     <label for="entityProfile">Example profile</label>
                     <select id="entityProfile" name="entity_profile">
-                      <option value="manufacturer">Manufacturer</option>
-                      <option value="manufacturer_finco">Manufacturer with customer financing</option>
-                      <option value="insurer">Insurer / investor</option>
-                      <option value="bank">Investment and retail bank</option>
+                      <optgroup label="Channel Islands financial services">
+                        <option value="fund_admin_trust">Fund administrator / trust company</option>
+                        <option value="investment_fund">Investment / private equity fund</option>
+                        <option value="real_estate_fund">Real estate fund</option>
+                        <option value="gp_manager">GP / investment manager</option>
+                        <option value="lp_vehicle">LP / investment holding vehicle</option>
+                        <option value="pcc">PCC / cell company</option>
+                      </optgroup>
+                      <optgroup label="Local operating and public-interest">
+                        <option value="fuel_distributor">Fuel distributor / retailer</option>
+                        <option value="dairy_manufacturer">Dairy / food manufacturer</option>
+                        <option value="housing_provider">Housing provider / property operator</option>
+                        <option value="public_industry_body">Regulator / industry body</option>
+                      </optgroup>
+                      <optgroup label="IASB-style baselines">
+                        <option value="manufacturer">Manufacturer</option>
+                        <option value="manufacturer_finco">Manufacturer with customer financing</option>
+                        <option value="insurer">Insurer / investor</option>
+                        <option value="bank">Investment and retail bank</option>
+                      </optgroup>
                       <option value="custom">Custom profile</option>
                     </select>
                   </div>
@@ -1365,7 +1381,7 @@
         </div>
 
         <div class="disclaimer">
-          <strong>Educational disclaimer.</strong> This tool is an indicative presentation aid, not a compliance engine or accounting opinion. Outputs depend on management judgement, entity-specific facts and accounting policies. They do not replace analysis of specified main business activities, liability populations, MPM governance, interim reporting, IAS 7 mapping, tax, NCI or digital reporting requirements. IFRS Accounting Standards and related marks are the property of the IFRS Foundation; this independent tool is not affiliated with or endorsed by the IFRS Foundation.
+          <strong>Educational disclaimer.</strong> This tool is an indicative presentation aid, not a compliance engine or accounting opinion. Outputs depend on management judgement, entity-specific facts and accounting policies. They do not replace analysis of specified main business activities, reporting-entity boundaries, liability populations, MPM governance, interim reporting, IAS 7 mapping, tax, NCI or digital reporting requirements. Sector profiles are generic and do not represent, or imply endorsement by, any named Channel Islands organisation. IFRS Accounting Standards and related marks are the property of the IFRS Foundation; this independent tool is not affiliated with or endorsed by the IFRS Foundation.
         </div>
       </div>
     </section>
@@ -1456,7 +1472,7 @@
       { id: "impairment", label: "Impairment losses / reversals", hint: "P&L line by nature / note input otherwise", type: "specified_nature", rule: "operating", confidence: "judgement", why: "Classification follows the relevant underlying facts; confirm the category." },
       { id: "inventory_writedowns", label: "Inventory write-downs / reversals", hint: "P&L line by nature / note input otherwise", type: "specified_nature", rule: "operating", confidence: "rule", why: "Included in operating expenses and the specified-expenses note trigger." },
       { id: "interest_income_customer_financing", label: "Interest income — customer financing", hint: "Main-business-activity sensitive", type: "pnl", rule: "customer_financing_income", confidence: "rule", why: "Moves to operating when providing financing to customers is a main business activity." },
-      { id: "interest_income_other", label: "Other interest / investment income", hint: "Main-business-activity sensitive", type: "pnl", rule: "investment_income", confidence: "judgement", why: "Classification depends on the assets and the entity's specified main business activities." },
+      { id: "interest_income_other", label: "Other investment income / fair value movements", hint: "Includes interest where relevant; main-business-activity sensitive", type: "pnl", rule: "investment_income", confidence: "judgement", why: "Classification depends on the assets, source of return and the entity's specified main business activities." },
       { id: "interest_expense_borrowings", label: "Interest expense — financing-only liabilities", hint: "Policy-choice sensitive", type: "pnl", rule: "financing_liability_expense", confidence: "judgement", why: "The financing-to-customers policy choice can move qualifying amounts into operating." },
       { id: "interest_expense_lease_liabilities", label: "Interest expense — lease liabilities", hint: "Separate from financing-only liabilities", type: "pnl", rule: "financing", confidence: "rule", why: "Lease liabilities are not treated here as transactions involving only the raising of finance." },
       { id: "interest_expense_pension_liabilities", label: "Interest expense — pension liabilities", hint: "Illustrative financing line", type: "pnl", rule: "financing", confidence: "rule", why: "Shown in financing in the baseline illustrative profile." },
@@ -1469,9 +1485,170 @@
     ];
 
     const PRESETS = {
+      fund_admin_trust: {
+        label: "Fund administrator / trust company",
+        description: "Service-business profile for fund administration, trust and corporate-services teams.",
+        assumption: "The preset does not assume that administering client structures means the reporting entity itself invests in assets or finances customers as a main business activity.",
+        invests: false, finances: false, sfp: "current_noncurrent", expense: "function",
+        financingPolicy: "split", indirect: true, mpm: true, eps: false, firstYear: true,
+        interim: true, xbrl: false, unit: "£000",
+        amounts: {
+          revenue: 2400, cost_of_sales: 0, other_operating_expenses: -1300,
+          employee_benefits: -900, depreciation: -60, amortisation: -25, impairment: -8, inventory_writedowns: 0,
+          interest_income_customer_financing: 0, interest_income_other: 25, interest_expense_borrowings: -35,
+          interest_expense_lease_liabilities: -20, interest_expense_pension_liabilities: -5, dividends_received: 0,
+          dividends_paid: -180, insurance_finance_income_expense: 0, share_of_profit_associates_jvs: 0,
+          tax_expense: -240, discontinued_operations_result: 0
+        }
+      },
+      investment_fund: {
+        label: "Investment / private equity fund",
+        description: "Alternative-investment profile for private equity, venture, credit and diversified funds.",
+        assumption: "Investing in relevant assets is selected as a main business activity, but that conclusion must be evidenced for the reporting entity.",
+        invests: true, finances: false, sfp: "liquidity", expense: "nature",
+        financingPolicy: "split", indirect: false, mpm: false, eps: false, firstYear: true,
+        interim: true, xbrl: true, unit: "£000",
+        amounts: {
+          revenue: 0, cost_of_sales: 0, other_operating_expenses: -110,
+          employee_benefits: -30, depreciation: -2, amortisation: 0, impairment: -15, inventory_writedowns: 0,
+          interest_income_customer_financing: 0, interest_income_other: 1250, interest_expense_borrowings: -180,
+          interest_expense_lease_liabilities: 0, interest_expense_pension_liabilities: 0, dividends_received: 320,
+          dividends_paid: -900, insurance_finance_income_expense: 0, share_of_profit_associates_jvs: 80,
+          tax_expense: 0, discontinued_operations_result: 0
+        }
+      },
+      real_estate_fund: {
+        label: "Real estate fund",
+        description: "Property-investment profile spanning rental returns, fair value movements and external financing.",
+        assumption: "The preset selects investing in assets as a main business activity; asset use, ownership structure and the source of each return still require analysis.",
+        invests: true, finances: false, sfp: "current_noncurrent", expense: "nature",
+        financingPolicy: "split", indirect: true, mpm: true, eps: false, firstYear: true,
+        interim: true, xbrl: true, unit: "£000",
+        amounts: {
+          revenue: 850, cost_of_sales: 0, other_operating_expenses: -180,
+          employee_benefits: -35, depreciation: 0, amortisation: 0, impairment: -20, inventory_writedowns: 0,
+          interest_income_customer_financing: 0, interest_income_other: 470, interest_expense_borrowings: -210,
+          interest_expense_lease_liabilities: 0, interest_expense_pension_liabilities: 0, dividends_received: 0,
+          dividends_paid: -500, insurance_finance_income_expense: 0, share_of_profit_associates_jvs: 65,
+          tax_expense: -15, discontinued_operations_result: 0
+        }
+      },
+      gp_manager: {
+        label: "GP / investment manager",
+        description: "Management-company profile for fee income, operating teams and sponsor investments.",
+        assumption: "The GP or manager is treated as a service business by default; carried interest, co-investments and consolidation conclusions need entity-specific analysis.",
+        invests: false, finances: false, sfp: "current_noncurrent", expense: "function",
+        financingPolicy: "split", indirect: true, mpm: true, eps: false, firstYear: true,
+        interim: true, xbrl: false, unit: "£000",
+        amounts: {
+          revenue: 1800, cost_of_sales: 0, other_operating_expenses: -880,
+          employee_benefits: -620, depreciation: -35, amortisation: -18, impairment: -5, inventory_writedowns: 0,
+          interest_income_customer_financing: 0, interest_income_other: 75, interest_expense_borrowings: -25,
+          interest_expense_lease_liabilities: -12, interest_expense_pension_liabilities: 0, dividends_received: 20,
+          dividends_paid: -240, insurance_finance_income_expense: 0, share_of_profit_associates_jvs: 0,
+          tax_expense: -160, discontinued_operations_result: 0
+        }
+      },
+      lp_vehicle: {
+        label: "LP / investment holding vehicle",
+        description: "Limited-partnership or holding-vehicle profile for investment returns and partner distributions.",
+        assumption: "The preset selects investing in assets as a main business activity; legal form alone does not determine the IFRS 18 outcome.",
+        invests: true, finances: false, sfp: "liquidity", expense: "nature",
+        financingPolicy: "split", indirect: false, mpm: false, eps: false, firstYear: true,
+        interim: false, xbrl: false, unit: "£000",
+        amounts: {
+          revenue: 0, cost_of_sales: 0, other_operating_expenses: -45,
+          employee_benefits: 0, depreciation: 0, amortisation: 0, impairment: -10, inventory_writedowns: 0,
+          interest_income_customer_financing: 0, interest_income_other: 760, interest_expense_borrowings: -80,
+          interest_expense_lease_liabilities: 0, interest_expense_pension_liabilities: 0, dividends_received: 140,
+          dividends_paid: -600, insurance_finance_income_expense: 0, share_of_profit_associates_jvs: 210,
+          tax_expense: 0, discontinued_operations_result: 0
+        }
+      },
+      pcc: {
+        label: "PCC / cell company",
+        description: "Channel Islands cell-company profile for fund, insurance or structured-asset activity.",
+        assumption: "This is deliberately generic: the core, cells, legal entity, consolidation and financial-statement perimeter must be resolved before applying category logic.",
+        invests: true, finances: false, sfp: "liquidity", expense: "nature",
+        financingPolicy: "split", indirect: true, mpm: false, eps: false, firstYear: true,
+        interim: true, xbrl: false, unit: "£000",
+        amounts: {
+          revenue: 0, cost_of_sales: 0, other_operating_expenses: -90,
+          employee_benefits: -18, depreciation: -2, amortisation: 0, impairment: -12, inventory_writedowns: 0,
+          interest_income_customer_financing: 0, interest_income_other: 620, interest_expense_borrowings: -70,
+          interest_expense_lease_liabilities: 0, interest_expense_pension_liabilities: 0, dividends_received: 110,
+          dividends_paid: -420, insurance_finance_income_expense: 0, share_of_profit_associates_jvs: 30,
+          tax_expense: 0, discontinued_operations_result: 0
+        }
+      },
+      fuel_distributor: {
+        label: "Fuel distributor / retailer",
+        description: "Inventory-led local operating profile for fuel distribution, forecourts and retail activity.",
+        assumption: "No specified main business activity is assumed; inventory, cost-of-sales, labelling and cash-flow mapping are the principal presentation lenses.",
+        invests: false, finances: false, sfp: "current_noncurrent", expense: "function",
+        financingPolicy: "split", indirect: true, mpm: false, eps: false, firstYear: true,
+        interim: true, xbrl: false, unit: "£000",
+        amounts: {
+          revenue: 7200, cost_of_sales: -5700, other_operating_expenses: -620,
+          employee_benefits: -450, depreciation: -80, amortisation: -5, impairment: -10, inventory_writedowns: -35,
+          interest_income_customer_financing: 0, interest_income_other: 8, interest_expense_borrowings: -95,
+          interest_expense_lease_liabilities: -35, interest_expense_pension_liabilities: 0, dividends_received: 0,
+          dividends_paid: -120, insurance_finance_income_expense: 0, share_of_profit_associates_jvs: 0,
+          tax_expense: -130, discontinued_operations_result: 0
+        }
+      },
+      dairy_manufacturer: {
+        label: "Dairy / food manufacturer",
+        description: "Manufacturing profile for dairy, food production, distribution and export activity.",
+        assumption: "Manufacturing remains a first-class use case: cost of sales, inventory, employee costs and specified-expense allocation are retained in full.",
+        invests: false, finances: false, sfp: "current_noncurrent", expense: "function",
+        financingPolicy: "split", indirect: true, mpm: false, eps: false, firstYear: true,
+        interim: true, xbrl: false, unit: "£000",
+        amounts: {
+          revenue: 4400, cost_of_sales: -2800, other_operating_expenses: -620,
+          employee_benefits: -850, depreciation: -190, amortisation: -12, impairment: -15, inventory_writedowns: -50,
+          interest_income_customer_financing: 0, interest_income_other: 6, interest_expense_borrowings: -85,
+          interest_expense_lease_liabilities: -30, interest_expense_pension_liabilities: -5, dividends_received: 0,
+          dividends_paid: -140, insurance_finance_income_expense: 0, share_of_profit_associates_jvs: 0,
+          tax_expense: -170, discontinued_operations_result: 0
+        }
+      },
+      housing_provider: {
+        label: "Housing provider / property operator",
+        description: "Property-intensive operating profile for housing, development, rental and maintenance teams.",
+        assumption: "Owning a large property portfolio does not by itself settle the specified-main-business-activity assessment; how assets are used is central.",
+        invests: false, finances: false, sfp: "current_noncurrent", expense: "mixed",
+        financingPolicy: "split", indirect: true, mpm: false, eps: false, firstYear: true,
+        interim: true, xbrl: false, unit: "£000",
+        amounts: {
+          revenue: 2100, cost_of_sales: -550, other_operating_expenses: -520,
+          employee_benefits: -300, depreciation: -420, amortisation: -8, impairment: -30, inventory_writedowns: 0,
+          interest_income_customer_financing: 0, interest_income_other: 15, interest_expense_borrowings: -280,
+          interest_expense_lease_liabilities: -10, interest_expense_pension_liabilities: -5, dividends_received: 0,
+          dividends_paid: -300, insurance_finance_income_expense: 0, share_of_profit_associates_jvs: 0,
+          tax_expense: 0, discontinued_operations_result: 0
+        }
+      },
+      public_industry_body: {
+        label: "Regulator / industry body",
+        description: "Public-interest or membership-body profile for regulatory, promotional and sector-support teams.",
+        assumption: "Confirm the applicable reporting framework and entity-specific scope before relying on any IFRS 18 output.",
+        invests: false, finances: false, sfp: "current_noncurrent", expense: "nature",
+        financingPolicy: "split", indirect: true, mpm: false, eps: false, firstYear: true,
+        interim: false, xbrl: false, unit: "£000",
+        amounts: {
+          revenue: 450, cost_of_sales: 0, other_operating_expenses: -120,
+          employee_benefits: -250, depreciation: -20, amortisation: -5, impairment: 0, inventory_writedowns: 0,
+          interest_income_customer_financing: 0, interest_income_other: 5, interest_expense_borrowings: 0,
+          interest_expense_lease_liabilities: -8, interest_expense_pension_liabilities: 0, dividends_received: 0,
+          dividends_paid: 0, insurance_finance_income_expense: 0, share_of_profit_associates_jvs: 0,
+          tax_expense: 0, discontinued_operations_result: 0
+        }
+      },
       manufacturer: {
         label: "Manufacturer",
-        description: "No specified main business activity selected.",
+        description: "IASB-style baseline for a manufacturer with conventional operating, investing and financing lines.",
+        assumption: "No specified main business activity is assumed.",
         invests: false,
         finances: false,
         sfp: "current_noncurrent",
@@ -1495,7 +1672,8 @@
       },
       manufacturer_finco: {
         label: "Manufacturer with customer financing",
-        description: "Provides financing to customers as a specified main business activity.",
+        description: "IASB-style baseline combining manufacturing and customer-financing activity.",
+        assumption: "Providing financing to customers is selected as a specified main business activity.",
         invests: false,
         finances: true,
         sfp: "current_noncurrent",
@@ -1519,7 +1697,8 @@
       },
       insurer: {
         label: "Insurer / investor",
-        description: "Invests in assets as a specified main business activity.",
+        description: "IASB-style baseline for insurance and investment activity.",
+        assumption: "Investing in assets is selected as a specified main business activity.",
         invests: true,
         finances: false,
         sfp: "liquidity",
@@ -1543,7 +1722,8 @@
       },
       bank: {
         label: "Investment and retail bank",
-        description: "Invests in assets and provides financing to customers as specified main business activities.",
+        description: "IASB-style baseline for a bank combining investment and customer-financing activity.",
+        assumption: "Both specified main business activities and the all-operating liability policy are selected.",
         invests: true,
         finances: true,
         sfp: "liquidity",
@@ -1568,10 +1748,19 @@
       custom: {
         label: "Custom profile",
         description: "No example assumptions loaded.",
+        assumption: "All profile conclusions must be set from the reporting entity's own facts.",
         invests: false, finances: false, sfp: "current_noncurrent", expense: "function",
         financingPolicy: "split", indirect: true, mpm: false, eps: false, firstYear: true,
         interim: false, xbrl: false, unit: "£000", amounts: {}
       }
+    };
+
+    const PROFILE_GROUPS = {
+      funds: ["investment_fund", "real_estate_fund", "lp_vehicle", "pcc"],
+      serviceProviders: ["fund_admin_trust", "gp_manager"],
+      structures: ["gp_manager", "lp_vehicle", "pcc"],
+      inventoryBusinesses: ["fuel_distributor", "dairy_manufacturer", "manufacturer", "manufacturer_finco"],
+      propertyOperators: ["real_estate_fund", "housing_provider"]
     };
 
     const CHECKLIST_RULES = [
@@ -1580,8 +1769,15 @@
       { priority: "Critical", test: d => d.expense !== "nature", text: "Prepare the single specified-expenses-by-nature note, with the five totals allocated to each operating line item." },
       { priority: "Critical", test: d => d.mpm, text: "Establish MPM governance and draft the single note: rationale, calculation, reconciliation, tax effects, NCI effects and change tracking." },
       { priority: "Critical", test: d => d.indirect, text: "Rebuild the indirect cash flow bridge from operating profit or loss and separately remap interest and dividend cash flows under IAS 7." },
+      { priority: "Critical", test: d => d.profile === "pcc", text: "Resolve the financial-statement perimeter for the PCC or ICC: core, individual cells, legal entity and any consolidated reporting layer before applying category logic." },
       { priority: "High", test: d => d.finances, text: "Document the financing-to-customers assessment, liability population and classification policy, including the impact on the PBFIT subtotal." },
       { priority: "High", test: d => d.invests, text: "Document which assets form part of the investing main business activity and reassess the related income and expenses." },
+      { priority: "High", test: d => PROFILE_GROUPS.funds.includes(d.profile), text: "Map each material return—interest, dividends, fair value movements, disposals and associate/JV results—to its underlying asset and reporting-entity facts." },
+      { priority: "High", test: d => PROFILE_GROUPS.serviceProviders.includes(d.profile), text: "Map administration, trust, corporate-services or management fee income and the related employee and outsourcing costs into informative operating lines." },
+      { priority: "High", test: d => PROFILE_GROUPS.structures.includes(d.profile), text: "Document the GP, LP, manager, core and cell boundaries; legal form and client activity do not by themselves determine the IFRS 18 classification." },
+      { priority: "High", test: d => PROFILE_GROUPS.propertyOperators.includes(d.profile), text: "Document how each property class generates returns and whether assets are used to provide services or generate returns individually and largely independently." },
+      { priority: "High", test: d => PROFILE_GROUPS.inventoryBusinesses.includes(d.profile), text: "Reconcile inventory expense into cost of sales and prepare the inventory write-down allocation required for the specified-expenses note where triggered." },
+      { priority: "High", test: d => d.profile === "public_industry_body", text: "Confirm the entity's applicable reporting framework and whether IFRS 18 applies before using the transformation output." },
       { priority: "High", test: d => d.profile === "insurer", text: "Validate the insurer-oriented presentation, including operating classification of insurance finance income and expenses recognised in P&L." },
       { priority: "High", test: d => d.eps, text: "Restrict additional EPS amounts to permitted numerators and present them only in the notes." },
       { priority: "Medium", test: d => d.xbrl, text: "Review the IFRS Accounting Taxonomy entry point and MPM reconciliation formula impact for ESEF or XBRL reporting." },
@@ -1701,6 +1897,10 @@
       if (!nonZero) {
         warnings.push({ type: "info", text: "No amounts have been entered. Category and disclosure logic will still work, but the statement comparison will be empty." });
       }
+      const profileAssumption = PRESETS[data.profile]?.assumption;
+      if (profileAssumption) {
+        warnings.push({ type: "info", text: `Profile lens: ${profileAssumption}` });
+      }
       if (!data.finances && Number(data.amounts.interest_income_customer_financing) !== 0) {
         warnings.push({ type: "warning", text: "Customer-financing interest is present, but financing customers is not selected as a main business activity. The tool places it in investing and flags the main-business-activity assessment for review." });
       }
@@ -1712,6 +1912,24 @@
       }
       if (data.profile === "insurer" && !data.invests) {
         warnings.push({ type: "warning", text: "The insurer / investor example normally selects investing in assets as a main business activity." });
+      }
+      if (PROFILE_GROUPS.funds.includes(data.profile) && !data.invests) {
+        warnings.push({ type: "warning", text: "This fund or investment-vehicle profile normally starts with investing in assets selected. If you switch it off, document the reporting-entity facts supporting that conclusion." });
+      }
+      if (data.profile === "fund_admin_trust" && (data.invests || data.finances)) {
+        warnings.push({ type: "warning", text: "Servicing funds, trusts or companies does not by itself mean the administrator invests in assets or finances customers as its own specified main business activity." });
+      }
+      if (data.profile === "pcc") {
+        warnings.push({ type: "warning", text: "Management judgement required: do not apply one PCC result automatically across its core, cells or consolidated financial statements." });
+      }
+      if (data.profile === "lp_vehicle") {
+        warnings.push({ type: "info", text: "An LP's legal form, and the roles of its general and limited partners, do not replace the reporting-entity-level IFRS 18 assessment." });
+      }
+      if (data.profile === "housing_provider") {
+        warnings.push({ type: "info", text: "A large property portfolio does not automatically make investing in assets a specified main business activity; assess how the properties are used and generate returns." });
+      }
+      if (data.profile === "public_industry_body") {
+        warnings.push({ type: "info", text: "This generic profile can support regulators, promotional bodies and public-interest teams, but the applicable reporting framework must be confirmed first." });
       }
       if (data.eps) {
         warnings.push({ type: "info", text: "Additional EPS amounts are note-only and must use a required total or subtotal, a permitted common subtotal, or an MPM as the numerator." });
@@ -1898,6 +2116,7 @@
       const data = result.data;
       const assumptions = [
         "Amounts are illustrative and use one consistent unit; the tool does not validate recognition or measurement.",
+        PRESETS[data.profile]?.assumption || "All profile conclusions must be set from the reporting entity's own facts.",
         data.expense === "nature"
           ? "Nature expense amounts are included in the P&L; cost of sales is treated as a note-only input."
           : "Specified nature amounts are treated as note inputs and excluded from P&L totals to reduce automatic double counting.",
@@ -1922,9 +2141,10 @@
       const nonZero = Object.values(result.data.amounts).some(value => Number(value) !== 0);
 
       $("#snapshot-title").textContent = preset.label;
-      $("#snapshotDescription").textContent = specified.length
-        ? `${specified.join(" and ")} as ${specified.length > 1 ? "specified main business activities" : "a specified main business activity"}.`
+      const activityDescription = specified.length
+        ? `${specified.join(" and ")} selected as ${specified.length > 1 ? "specified main business activities" : "a specified main business activity"}.`
         : "No specified main business activity selected.";
+      $("#snapshotDescription").textContent = `${preset.description} ${activityDescription}`;
       $("#snapshotOperating").textContent = nonZero ? formatNumber(result.operatingProfit, result.data.unit) : "—";
       $("#snapshotPbfit").textContent = result.omitPbfit ? "Not applied" : "Required";
       $("#snapshotDisclosures").textContent = String(triggered);
@@ -2200,7 +2420,7 @@
       $("#assessmentForm").addEventListener("input", renderAll);
       $("#assessmentForm").addEventListener("change", renderAll);
       $("#loadPresetButton").addEventListener("click", () => loadPreset($("#entityProfile").value));
-      $("#heroPresetButton").addEventListener("click", () => loadPreset("manufacturer", { scroll: true }));
+      $("#heroPresetButton").addEventListener("click", () => loadPreset("fund_admin_trust", { scroll: true }));
       $("#viewResultsButton").addEventListener("click", () => $("#results").scrollIntoView({ behavior: "smooth", block: "start" }));
       $("#resetButton").addEventListener("click", resetAssessment);
       $("#exportJsonButton").addEventListener("click", exportJson);
@@ -2281,6 +2501,26 @@
         run: () => Object.values(analyse(testData()).totals).every(Number.isFinite)
       },
       {
+        name: "Channel Islands profile library retains all four baseline scenarios",
+        run: () => ["manufacturer", "manufacturer_finco", "insurer", "bank"].every(key => Object.hasOwn(PRESETS, key))
+      },
+      {
+        name: "Fund administrator profile does not assume client investment activity belongs to the administrator",
+        run: () => PRESETS.fund_admin_trust.invests === false && PRESETS.fund_admin_trust.finances === false
+      },
+      {
+        name: "Investment fund profile selects investing in assets as its starting assessment",
+        run: () => PRESETS.investment_fund.invests === true
+      },
+      {
+        name: "PCC profile triggers reporting-perimeter action",
+        run: () => CHECKLIST_RULES.filter(rule => rule.test(testData({ profile: "pcc" }))).some(rule => rule.text.includes("financial-statement perimeter"))
+      },
+      {
+        name: "Manufacturing remains represented in both local and baseline profiles",
+        run: () => Object.hasOwn(PRESETS, "dairy_manufacturer") && Object.hasOwn(PRESETS, "manufacturer")
+      },
+      {
         name: "Saved working files restore profile and line-item values",
         run: () => {
           const restored = normaliseWorkingFile({
@@ -2350,7 +2590,7 @@
     function init() {
       renderLineItemInputs();
       attachEvents();
-      loadPreset("manufacturer", { toast: false });
+      loadPreset("fund_admin_trust", { toast: false });
       runSelfTests();
     }
 
