@@ -683,6 +683,17 @@
     .statement-intro { margin-bottom: 22px; color: var(--ink-soft); font-size: 0.8rem; }
 
     .statement-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 0.82rem; }
+    .statement-table th {
+      padding: 0 0 9px;
+      color: var(--ink-soft);
+      border-bottom: 1px solid var(--line-dark);
+      font-size: 0.66rem;
+      font-weight: 850;
+      letter-spacing: 0.09em;
+      text-align: left;
+      text-transform: uppercase;
+    }
+    .statement-table th:last-child { width: 100px; padding-left: 13px; text-align: right; }
     .statement-table td { padding: 8px 0; vertical-align: top; border-bottom: 1px solid rgba(216, 221, 215, 0.72); }
     .statement-table td:first-child { overflow-wrap: anywhere; }
     .statement-table td:last-child { width: 100px; padding-left: 13px; text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -762,6 +773,15 @@
     .details-body p:last-child, .details-body ul:last-child { margin-bottom: 0; }
     .details-body ul { margin-top: 8px; padding-left: 19px; }
     .details-body li + li { margin-top: 5px; }
+    .details-note {
+      margin-top: 12px;
+      padding: 11px 12px;
+      color: #5d451f;
+      background: var(--amber-soft);
+      border-left: 3px solid var(--amber);
+      border-radius: 7px;
+      font-size: 0.76rem;
+    }
 
     .status-pill {
       justify-self: end;
@@ -830,6 +850,79 @@
     }
 
     .disclaimer strong { color: var(--ink); }
+
+    .knowledge-base {
+      padding: 90px 0 96px;
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+    }
+
+    .knowledge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .knowledge-card {
+      padding: 25px;
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 34px rgba(24, 48, 42, 0.05);
+    }
+
+    .knowledge-card-number {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--amber);
+      font-size: 0.7rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+    }
+
+    .knowledge-card h3 {
+      margin-bottom: 10px;
+      color: var(--forest);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+    }
+
+    .knowledge-card p {
+      margin-bottom: 11px;
+      color: var(--ink-soft);
+      font-size: 0.84rem;
+    }
+
+    .knowledge-card p:last-child { margin-bottom: 0; }
+
+    .knowledge-subtotals {
+      display: grid;
+      grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr);
+      gap: 20px;
+      align-items: start;
+      margin-top: 18px;
+      padding: 24px 26px;
+      color: white;
+      background: var(--forest);
+      border-radius: var(--radius-lg);
+    }
+
+    .knowledge-subtotals h3 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+    }
+
+    .knowledge-subtotals ul {
+      margin: 0;
+      padding-left: 20px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.84rem;
+    }
+
+    .knowledge-subtotals li + li { margin-top: 7px; }
 
     .site-footer {
       padding: 35px 0 45px;
@@ -1018,6 +1111,7 @@
       .snapshot { position: static; }
       .section-heading { grid-template-columns: 1fr; gap: 16px; }
       .output-grid { grid-template-columns: 1fr; }
+      .knowledge-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 720px) {
@@ -1037,6 +1131,7 @@
       .line-item-head, .line-item { grid-template-columns: minmax(0, 1fr) 98px; }
       .form-actions { position: static; }
       .form-actions .primary { width: 100%; margin: 0; }
+      .knowledge-subtotals { grid-template-columns: 1fr; }
       .footer-inner { align-items: flex-start; flex-direction: column; }
       .footer-meta { justify-content: flex-start; }
       .privacy-points { grid-template-columns: 1fr; }
@@ -1086,7 +1181,7 @@
     <section class="shell hero" aria-labelledby="hero-title">
       <div>
         <p class="eyebrow">Channel Islands · IFRS 18 readiness</p>
-        <h1 id="hero-title">Find the shape of your 2027 statement.</h1>
+        <h1 id="hero-title">Find the shape of your 2027 income statement.</h1>
         <p class="hero-copy">Built first for Channel Islands financial services—fund administrators, trust companies, alternative funds and structured vehicles—without losing the manufacturing and operating-business cases that make the comparison useful.</p>
         <div class="button-row">
           <a class="button primary" href="#assessment-section">
@@ -1098,9 +1193,9 @@
       </div>
       <aside class="hero-aside" aria-label="IFRS 18 overview">
         <p class="hero-aside-label">What the tool covers</p>
-        <div class="hero-stat"><b>5</b><span>profit or loss categories applied to your indicative inputs</span></div>
-        <div class="hero-stat"><b>14</b><span>financial-services, local-business and baseline profiles</span></div>
-        <div class="hero-stat"><b>3</b><span>practical outputs: structure, disclosure delta and next actions</span></div>
+        <div class="hero-stat"><b>5</b><span>Profit or loss categories applied to your indicative inputs</span></div>
+        <div class="hero-stat"><b>14</b><span>Financial-services, local-business and baseline profiles</span></div>
+        <div class="hero-stat"><b>3</b><span>Practical outputs: structure, disclosure delta and next actions</span></div>
       </aside>
     </section>
 
@@ -1242,7 +1337,7 @@
                     <span class="switch"><input type="checkbox" id="indirectCashFlow" name="uses_indirect_cash_flow_method" checked><span class="switch-track" aria-hidden="true"></span></span>
                   </label>
                   <label class="toggle-row">
-                    <span><strong>Management-defined performance measures</strong><small>Used in relevant public communications outside the financial statements</small></span>
+                    <span><strong>Management-defined performance measures</strong><small>Subtotal of income/expenses used in relevant public communications outside the financial statements</small></span>
                     <span class="switch"><input type="checkbox" id="usesMpm" name="uses_mpm_in_public_communications"><span class="switch-track" aria-hidden="true"></span></span>
                   </label>
                   <label class="toggle-row">
@@ -1267,6 +1362,7 @@
               <div class="field full" id="mpmLabelField" hidden>
                 <label for="mpmLabel">Illustrative MPM label</label>
                 <input id="mpmLabel" name="mpm_label" type="text" value="Adjusted operating profit" maxlength="80">
+                <span class="field-help">What is the name of the management performance measure?</span>
               </div>
             </div>
           </section>
@@ -1291,7 +1387,7 @@
                 </select>
               </div>
               <div class="field full">
-                <div class="line-item-head"><span>Line item</span><span>Amount</span></div>
+                <div class="line-item-head"><span>Line item</span><span id="lineAmountHeading">Amount (£000)</span></div>
                 <div class="line-items" id="lineItems"></div>
                 <span class="field-help" id="lineItemModeHelp">For function or mixed presentation, the five specified nature amounts are treated as note inputs and excluded from the P&amp;L calculation to avoid automatic double counting.</span>
               </div>
@@ -1308,7 +1404,7 @@
           </div>
         </form>
 
-        <aside class="card snapshot" aria-labelledby="snapshot-title">
+        <aside class="card snapshot" id="readinessSnapshot" aria-labelledby="snapshot-title">
           <div class="snapshot-header">
             <div class="snapshot-kicker">
               <span>Readiness snapshot</span>
@@ -1385,6 +1481,46 @@
         </div>
       </div>
     </section>
+
+    <section class="knowledge-base" id="knowledge-base" aria-labelledby="knowledge-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">IFRS 18 knowledge base</p>
+            <h2 id="knowledge-title">Three income statement categories, one clearer map.</h2>
+          </div>
+          <p>These IFRS 18 profit or loss categories are separate from the operating, investing and financing categories used for cash flows under IAS 7.</p>
+        </div>
+
+        <div class="knowledge-grid">
+          <article class="knowledge-card">
+            <span class="knowledge-card-number">01 / OPERATING</span>
+            <h3>Operating</h3>
+            <p>The residual category. Income and expenses are operating when they do not meet the definitions of investing, financing, income taxes or discontinued operations.</p>
+          </article>
+          <article class="knowledge-card">
+            <span class="knowledge-card-number">02 / INVESTING</span>
+            <h3>Investing</h3>
+            <p>Income and expenses from assets that generate returns individually and largely independently of the entity’s other resources, such as debt and equity investments, investment property, and cash and cash equivalents.</p>
+            <p>Income and expenses from assets used to deliver goods or services to customers are operating instead.</p>
+          </article>
+          <article class="knowledge-card">
+            <span class="knowledge-card-number">03 / FINANCING</span>
+            <h3>Financing</h3>
+            <p>For liabilities arising solely from raising finance, all related income and expenses are financing.</p>
+            <p>For liabilities that do not arise solely from raising finance, such as lease liabilities and defined benefit obligations, only the interest component is financing.</p>
+          </article>
+        </div>
+
+        <div class="knowledge-subtotals">
+          <h3>Mandatory subtotals</h3>
+          <ul>
+            <li>Operating profit or loss.</li>
+            <li>Profit or loss before financing and income taxes, subject to the specified exceptions reflected in the assessment.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -1443,7 +1579,7 @@
     */
 
     const RULES = {
-      version: "2026.07",
+      version: "2026.07.1",
       effectiveDate: "Annual periods beginning on or after 1 January 2027",
       categories: ["operating", "investing", "financing", "tax", "discontinued"],
       statement: {
@@ -1458,12 +1594,14 @@
         specifiedExpenses: ["Depreciation", "Amortisation", "Employee benefits", "Impairment losses and reversals", "Inventory write-downs and reversals"],
         mpm: ["Why the measure is used", "How it is calculated", "Reconciliation to the most directly comparable IFRS subtotal", "Tax effect of each reconciling item", "NCI effect of each reconciling item", "Tax methodology where relevant"],
         transition: "Line-by-line reconciliation between restated IFRS 18 comparative amounts and amounts previously presented under IAS 1.",
-        cashFlow: "Indirect operating cash flow starts from operating profit or loss; IAS 7 interest and dividend classification is assessed separately from P&L categories."
+        cashFlow: "IFRS 18 profit or loss categories and IAS 7 cash-flow categories are separate frameworks and are not fully aligned."
       }
     };
 
     const LINE_ITEM_RULES = [
       { id: "revenue", label: "Revenue", hint: "Statement line", type: "pnl", rule: "operating", confidence: "rule", why: "Operating is the residual category after the other four categories." },
+      { id: "management_fee_income", label: "Management fee income", hint: "GP / manager service income", type: "pnl", rule: "operating", confidence: "rule", why: "Management fee income from providing services is presented in operating in this illustrative model." },
+      { id: "carried_interest_income", label: "Carried interest income", hint: "GP / manager example; assess entity-specific terms", type: "pnl", rule: "operating", confidence: "judgement", why: "The GP / manager example presents carried interest income in operating; confirm the contractual, measurement and reporting-entity facts." },
       { id: "cost_of_sales", label: "Cost of sales", hint: "Use for function or mixed presentation", type: "functional", rule: "operating", confidence: "rule", why: "Presented within the operating category." },
       { id: "other_operating_expenses", label: "Other operating expenses", hint: "Amounts not captured elsewhere", type: "pnl", rule: "operating", confidence: "rule", why: "Residual operating expense in this illustrative model." },
       { id: "employee_benefits", label: "Employee benefits", hint: "P&L line by nature / note input otherwise", type: "specified_nature", rule: "operating", confidence: "rule", why: "Operating in this simplified input set; specified note input where function is used." },
@@ -1472,10 +1610,11 @@
       { id: "impairment", label: "Impairment losses / reversals", hint: "P&L line by nature / note input otherwise", type: "specified_nature", rule: "operating", confidence: "judgement", why: "Classification follows the relevant underlying facts; confirm the category." },
       { id: "inventory_writedowns", label: "Inventory write-downs / reversals", hint: "P&L line by nature / note input otherwise", type: "specified_nature", rule: "operating", confidence: "rule", why: "Included in operating expenses and the specified-expenses note trigger." },
       { id: "interest_income_customer_financing", label: "Interest income — customer financing", hint: "Main-business-activity sensitive", type: "pnl", rule: "customer_financing_income", confidence: "rule", why: "Moves to operating when providing financing to customers is a main business activity." },
+      { id: "interest_income_surplus_cash", label: "Interest income on surplus cash deposits", hint: "Presented in investing in this illustrative model", type: "pnl", rule: "investing", confidence: "rule", why: "Returns on surplus cash deposits are presented in the investing category in this illustrative model." },
       { id: "interest_income_other", label: "Other investment income / fair value movements", hint: "Includes interest where relevant; main-business-activity sensitive", type: "pnl", rule: "investment_income", confidence: "judgement", why: "Classification depends on the assets, source of return and the entity's specified main business activities." },
       { id: "interest_expense_borrowings", label: "Interest expense — financing-only liabilities", hint: "Policy-choice sensitive", type: "pnl", rule: "financing_liability_expense", confidence: "judgement", why: "The financing-to-customers policy choice can move qualifying amounts into operating." },
-      { id: "interest_expense_lease_liabilities", label: "Interest expense — lease liabilities", hint: "Separate from financing-only liabilities", type: "pnl", rule: "financing", confidence: "rule", why: "Lease liabilities are not treated here as transactions involving only the raising of finance." },
-      { id: "interest_expense_pension_liabilities", label: "Interest expense — pension liabilities", hint: "Illustrative financing line", type: "pnl", rule: "financing", confidence: "rule", why: "Shown in financing in the baseline illustrative profile." },
+      { id: "interest_expense_lease_liabilities", label: "Interest expense — lease liabilities", hint: "Separate from financing-only liabilities", type: "pnl", rule: "financing", confidence: "rule", why: "Although lease liabilities do not arise solely from raising finance, IFRS 18 requires the interest component arising from those liabilities to be classified in the financing category." },
+      { id: "interest_expense_pension_liabilities", label: "Interest expense — pension liabilities", hint: "Net interest component", type: "pnl", rule: "financing", confidence: "rule", why: "Although defined benefit obligations do not arise solely from raising finance, IFRS 18 requires the net interest component to be classified in the financing category." },
       { id: "dividends_received", label: "Dividends received", hint: "Main-business-activity sensitive", type: "pnl", rule: "investment_income", confidence: "judgement", why: "Moves to operating where investing in the relevant assets is a main business activity." },
       { id: "dividends_paid", label: "Dividends paid", hint: "Cash flow input only; excluded from P&L", type: "cashflow", rule: "excluded", confidence: "rule", why: "A distribution to owners, not income or expense in the statement of profit or loss." },
       { id: "insurance_finance_income_expense", label: "Insurance finance income / expense", hint: "IFRS 17 amount recognised in P&L", type: "pnl", rule: "insurance_operating", confidence: "rule", why: "Insurance finance income and expenses recognised in P&L are classified in operating." },
@@ -1527,7 +1666,7 @@
         amounts: {
           revenue: 850, cost_of_sales: 0, other_operating_expenses: -180,
           employee_benefits: -35, depreciation: 0, amortisation: 0, impairment: -20, inventory_writedowns: 0,
-          interest_income_customer_financing: 0, interest_income_other: 470, interest_expense_borrowings: -210,
+          interest_income_customer_financing: 0, interest_income_surplus_cash: 35, interest_income_other: 470, interest_expense_borrowings: -210,
           interest_expense_lease_liabilities: 0, interest_expense_pension_liabilities: 0, dividends_received: 0,
           dividends_paid: -500, insurance_finance_income_expense: 0, share_of_profit_associates_jvs: 65,
           tax_expense: -15, discontinued_operations_result: 0
@@ -1535,13 +1674,13 @@
       },
       gp_manager: {
         label: "GP / investment manager",
-        description: "Management-company profile for fee income, operating teams and sponsor investments.",
+        description: "Management-company profile for management fee and carried interest income, operating teams and sponsor investments.",
         assumption: "The GP or manager is treated as a service business by default; carried interest, co-investments and consolidation conclusions need entity-specific analysis.",
         invests: false, finances: false, sfp: "current_noncurrent", expense: "function",
         financingPolicy: "split", indirect: true, mpm: true, eps: false, firstYear: true,
         interim: true, xbrl: false, unit: "£000",
         amounts: {
-          revenue: 1800, cost_of_sales: 0, other_operating_expenses: -880,
+          revenue: 0, management_fee_income: 1500, carried_interest_income: 300, cost_of_sales: 0, other_operating_expenses: -880,
           employee_benefits: -620, depreciation: -35, amortisation: -18, impairment: -5, inventory_writedowns: 0,
           interest_income_customer_financing: 0, interest_income_other: 75, interest_expense_borrowings: -25,
           interest_expense_lease_liabilities: -12, interest_expense_pension_liabilities: 0, dividends_received: 20,
@@ -1558,7 +1697,7 @@
         interim: false, xbrl: false, unit: "£000",
         amounts: {
           revenue: 0, cost_of_sales: 0, other_operating_expenses: -45,
-          employee_benefits: 0, depreciation: 0, amortisation: 0, impairment: -10, inventory_writedowns: 0,
+          employee_benefits: 0, depreciation: 0, amortisation: 0, impairment: 0, inventory_writedowns: 0,
           interest_income_customer_financing: 0, interest_income_other: 760, interest_expense_borrowings: -80,
           interest_expense_lease_liabilities: 0, interest_expense_pension_liabilities: 0, dividends_received: 140,
           dividends_paid: -600, insurance_finance_income_expense: 0, share_of_profit_associates_jvs: 210,
@@ -1835,6 +1974,7 @@
     function classify(item, data) {
       switch (item.rule) {
         case "operating": return "operating";
+        case "investing": return "investing";
         case "financing": return "financing";
         case "tax": return "tax";
         case "discontinued": return "discontinued";
@@ -1956,7 +2096,7 @@
           status: data.mpm ? "Triggered" : "Not triggered",
           tone: data.mpm ? "active" : "not-triggered",
           body: data.mpm
-            ? `Include, in one note: ${RULES.disclosures.mpm.join("; ").toLowerCase()}. Confirm first that the measure meets the IFRS 18 definition of an MPM.`
+            ? `Include, in one note: ${RULES.disclosures.mpm.join("; ")}. Confirm first that the measure meets the IFRS 18 definition of a MPM.`
             : "No MPM is indicated in relevant public communications. A social-media post on its own is outside the public-communications set used for identifying an MPM."
         },
         {
@@ -1971,9 +2111,18 @@
           title: "Cash flow classification",
           status: data.indirect ? "Triggered" : "Review",
           tone: data.indirect ? "active" : "review",
-          body: data.indirect
-            ? RULES.disclosures.cashFlow
-            : "The tool does not assume the indirect method. Interest and dividend cash-flow classifications still require a separate IAS 7 assessment."
+          body: RULES.disclosures.cashFlow,
+          points: [
+            data.indirect
+              ? "The indirect method reconciliation starts from operating profit or loss."
+              : "If the indirect method is used, the reconciliation starts from operating profit or loss.",
+            "Interest paid and dividends paid are classified as financing cash flows.",
+            "Interest received and dividends received are generally classified as operating cash flows under amended IAS 7, subject to the requirements for entities with specified main business activities.",
+            "An investment entity may classify fair value gains and investment income within operating profit, while the related acquisition and disposal cash flows remain investing activities."
+          ],
+          note: data.invests
+            ? "This profile selects investing in assets as a specified main business activity. Do not copy its IFRS 18 operating classification automatically into the IAS 7 cash flow statement; map each cash flow separately."
+            : "Do not copy an IFRS 18 profit or loss category automatically into the IAS 7 cash flow statement; map each cash flow separately."
         },
         {
           title: "Specified main business activity disclosure",
@@ -1994,14 +2143,24 @@
       ];
     }
 
-    function formatNumber(value, unit) {
+    function formatNumber(value, unit, includeUnit = true) {
       const number = Number(value) || 0;
       const formatted = new Intl.NumberFormat("en-GB", {
         minimumFractionDigits: Number.isInteger(number) ? 0 : 1,
         maximumFractionDigits: 1
       }).format(Math.abs(number));
       const sign = number < 0 ? `(${formatted})` : formatted;
-      return unit === "units" ? sign : `${unit} ${sign}`;
+      return !includeUnit || unit === "units" ? sign : `${unit} ${sign}`;
+    }
+
+    function statementTableHead(unit) {
+      return `
+        <thead>
+          <tr>
+            <th scope="col">Line item</th>
+            <th scope="col">Amount (${escapeHtml(unit)})</th>
+          </tr>
+        </thead>`;
     }
 
     function renderCurrent(result) {
@@ -2017,15 +2176,16 @@
 
       $("#currentStatement").innerHTML = `
         <table class="statement-table">
+          ${statementTableHead(result.data.unit)}
           <tbody>
             ${rows.map(({ item, amount }) => `
               <tr>
                 <td>${escapeHtml(item.label)}</td>
-                <td>${formatNumber(amount, result.data.unit)}</td>
+                <td>${formatNumber(amount, result.data.unit, false)}</td>
               </tr>`).join("")}
             <tr class="subtotal">
               <td>Indicative total from entered P&amp;L lines</td>
-              <td>${formatNumber(result.currentTotal, result.data.unit)}</td>
+              <td>${formatNumber(result.currentTotal, result.data.unit, false)}</td>
             </tr>
           </tbody>
         </table>`;
@@ -2046,12 +2206,12 @@
             </span>
             <span class="why-note">Why: ${escapeHtml(item.why)}</span>
           </td>
-          <td>${formatNumber(item.amount, unit)}</td>
+          <td>${formatNumber(item.amount, unit, false)}</td>
         </tr>`;
     }
 
     function subtotalRow(label, value, unit, extraClass = "") {
-      return `<tr class="subtotal ${extraClass}"><td>${escapeHtml(label)}</td><td>${formatNumber(value, unit)}</td></tr>`;
+      return `<tr class="subtotal ${extraClass}"><td>${escapeHtml(label)}</td><td>${formatNumber(value, unit, false)}</td></tr>`;
     }
 
     function renderIfrs(result) {
@@ -2080,9 +2240,9 @@
 
       rows.push(categoryRow("Discontinued operations"));
       rows.push(categories.discontinued.length ? categories.discontinued.map(item => itemRow(item, data.unit)).join("") : '<tr><td colspan="2">No discontinued operation amount entered</td></tr>');
-      rows.push(`<tr class="grand-total"><td>Profit / (loss)</td><td>${formatNumber(result.profit, data.unit)}</td></tr>`);
+      rows.push(`<tr class="grand-total"><td>Profit / (loss)</td><td>${formatNumber(result.profit, data.unit, false)}</td></tr>`);
 
-      $("#ifrsStatement").innerHTML = `<table class="statement-table"><tbody>${rows.join("")}</tbody></table>`;
+      $("#ifrsStatement").innerHTML = `<table class="statement-table">${statementTableHead(data.unit)}<tbody>${rows.join("")}</tbody></table>`;
     }
 
     function renderWarnings(result) {
@@ -2100,7 +2260,11 @@
             <span>${escapeHtml(item.title)}</span>
             <span class="status-pill ${item.tone === "not-triggered" ? "not-triggered" : item.tone === "review" ? "review" : ""}">${escapeHtml(item.status)}</span>
           </summary>
-          <div class="details-body"><p>${escapeHtml(item.body)}</p></div>
+          <div class="details-body">
+            <p>${escapeHtml(item.body)}</p>
+            ${item.points?.length ? `<ul>${item.points.map(point => `<li>${escapeHtml(point)}</li>`).join("")}</ul>` : ""}
+            ${item.note ? `<p class="details-note">${escapeHtml(item.note)}</p>` : ""}
+          </div>
         </details>`).join("");
     }
 
@@ -2133,8 +2297,8 @@
     function renderSnapshot(result) {
       const preset = PRESETS[result.data.profile] || PRESETS.custom;
       const specified = [
-        result.data.invests ? "invests in assets" : "",
-        result.data.finances ? "finances customers" : ""
+        result.data.invests ? "Invests in assets" : "",
+        result.data.finances ? `${result.data.invests ? "finances" : "Finances"} customers` : ""
       ].filter(Boolean);
       const critical = result.checklist.filter(item => item.priority === "Critical").length;
       const triggered = result.disclosures.filter(item => item.status === "Triggered").length;
@@ -2205,7 +2369,9 @@
       });
 
       renderAll();
-      if (options.scroll) $("#assessment-section").scrollIntoView({ behavior: "smooth", block: "start" });
+      if (options.scrollTarget) {
+        window.requestAnimationFrame(() => $(options.scrollTarget)?.scrollIntoView({ behavior: "smooth", block: "start" }));
+      }
       if (options.toast !== false) showToast(`${preset.label} example loaded.`);
     }
 
@@ -2214,8 +2380,9 @@
       $("#mpmLabelField").hidden = !$("#usesMpm").checked;
       const expense = document.querySelector('input[name="operating_expense_presentation"]:checked')?.value || "function";
       $("#lineItemModeHelp").textContent = expense === "nature"
-        ? "For a nature presentation, the specified nature amounts are included in the P&L calculation; cost of sales is excluded to avoid automatic double counting."
+        ? "For presentation by nature, the specified expense categories are included in the P&L calculation, while cost of sales is excluded to prevent double counting."
         : "For function or mixed presentation, the five specified nature amounts are treated as note inputs and excluded from the P&L calculation to avoid automatic double counting.";
+      $("#lineAmountHeading").textContent = `Amount (${$("#amountUnit").value})`;
     }
 
     let toastTimer;
@@ -2419,8 +2586,8 @@
     function attachEvents() {
       $("#assessmentForm").addEventListener("input", renderAll);
       $("#assessmentForm").addEventListener("change", renderAll);
-      $("#loadPresetButton").addEventListener("click", () => loadPreset($("#entityProfile").value));
-      $("#heroPresetButton").addEventListener("click", () => loadPreset("fund_admin_trust", { scroll: true }));
+      $("#loadPresetButton").addEventListener("click", () => loadPreset($("#entityProfile").value, { scrollTarget: "#readinessSnapshot" }));
+      $("#heroPresetButton").addEventListener("click", () => loadPreset("fund_admin_trust", { scrollTarget: "#assessment-section" }));
       $("#viewResultsButton").addEventListener("click", () => $("#results").scrollIntoView({ behavior: "smooth", block: "start" }));
       $("#resetButton").addEventListener("click", resetAssessment);
       $("#exportJsonButton").addEventListener("click", exportJson);
@@ -2463,6 +2630,10 @@
       {
         name: "Investment income is investing for a manufacturer",
         run: () => testCategory({ invests: false, amounts: { interest_income_other: 10 } }, "interest_income_other", "investing")
+      },
+      {
+        name: "Surplus cash deposit interest remains investing for an investing main business",
+        run: () => testCategory({ invests: true, amounts: { interest_income_surplus_cash: 10 } }, "interest_income_surplus_cash", "investing")
       },
       {
         name: "Borrowing expense is financing under the split policy",
@@ -2511,6 +2682,22 @@
       {
         name: "Investment fund profile selects investing in assets as its starting assessment",
         run: () => PRESETS.investment_fund.invests === true
+      },
+      {
+        name: "GP manager example presents management fee and carried interest income in operating",
+        run: () => {
+          const result = analyse(testData({ profile: "gp_manager", amounts: PRESETS.gp_manager.amounts }));
+          const operatingIds = result.categories.operating.map(item => item.id);
+          return operatingIds.includes("management_fee_income") && operatingIds.includes("carried_interest_income");
+        }
+      },
+      {
+        name: "LP example does not assume a separate impairment loss for FVTPL investments",
+        run: () => PRESETS.lp_vehicle.amounts.impairment === 0
+      },
+      {
+        name: "Cash flow disclosure includes the IAS 7 operating-profit starting point",
+        run: () => buildDisclosures(testData({ indirect: true }))[3].points.some(point => point.includes("starts from operating profit or loss"))
       },
       {
         name: "PCC profile triggers reporting-perimeter action",

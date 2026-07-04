@@ -1,12 +1,14 @@
 # IFRS 18 Presentation Pathfinder
 
-A self-contained, browser-only educational tool for exploring indicative IFRS 18 statement of profit or loss categories, disclosure changes and implementation priorities.
+A self-contained, browser-only educational tool for exploring indicative IFRS 18 statement of profit or loss categories, disclosure changes, IAS 7 cash-flow implications and implementation priorities.
 
 The profile library is Channel Islands-first: fund administrators and trust companies, alternative and real estate funds, GP/LP structures, PCCs and cell companies, plus local operating and public-interest organisations. The original manufacturer, manufacturer-financing, insurer and bank baselines remain available.
 
 The site has no backend, cookies, analytics, external libraries or external fonts. All user inputs and calculations remain in the browser.
 
 Users can download a local JSON working file and load it later to restore their inputs. Refreshing or closing the page does not preserve an entered scenario unless that working file has been saved.
+
+The page also includes an IFRS 18 knowledge base covering the operating, investing and financing income-statement categories. Example profiles include dedicated operating lines for management fee and carried interest income in the GP / investment manager case, plus surplus-cash interest in the real estate fund case.
 
 ## Local preview
 
