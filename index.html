@@ -1489,7 +1489,7 @@
                       <option value="custom">Custom profile</option>
                     </select>
                   </div>
-                  <button class="button secondary" type="button" id="loadPresetButton">Load example</button>
+                  <button class="button secondary" type="button" id="loadPresetButton">Load Profile</button>
                 </div>
                 <span class="field-help">These are user-selected assumptions, not conclusions reached by the tool. IFRS 18.B33 requires the entity's assessment to be evidence-based.</span>
               </div>
@@ -3062,7 +3062,7 @@
         if (event.target === $("#privacyDialog")) closePrivacyDialog();
       });
       $("#entityProfile").addEventListener("change", event => {
-        if (event.target.value !== "custom") showToast("Select “Load example” to replace the current answers.");
+        if (event.target.value !== "custom") showToast("Select “Load Profile” to replace the current answers.");
       });
     }
 
