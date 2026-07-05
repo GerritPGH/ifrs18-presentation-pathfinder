@@ -1,6 +1,6 @@
 # IFRS 18 Presentation Pathfinder
 
-A self-contained, browser-only educational tool for exploring indicative IFRS 18 statement of profit or loss categories, disclosure changes, IAS 7 cash-flow implications and implementation priorities.
+A self-contained, browser-only scoping tool for exploring indicative IFRS 18 statement of profit or loss categories, disclosure changes, IAS 7 cash-flow implications and implementation priorities.
 
 The profile library is Channel Islands-first: fund administrators and trust companies, alternative and real estate funds, GP/LP structures, PCCs and cell companies, plus local operating and public-interest organisations. The original manufacturer, manufacturer-financing, insurer and bank baselines remain available.
 
@@ -8,7 +8,16 @@ The site has no backend, cookies, analytics, external libraries or external font
 
 Users can download a local JSON working file and load it later to restore their inputs. Refreshing or closing the page does not preserve an entered scenario unless that working file has been saved.
 
-The page also includes an IFRS 18 knowledge base covering the operating, investing and financing income-statement categories. Example profiles include dedicated operating lines for management fee and carried interest income in the GP / investment manager case, plus surplus-cash interest in the real estate fund case.
+The page includes:
+
+- all five IFRS 18 profit-or-loss categories;
+- technical-basis references for mapped lines;
+- guided specified-expense, MPM and transition previews;
+- suggested disclosure wording that is explicitly labelled as a drafting starting point;
+- separate equity-method and fair-value associate/JV illustrations reflecting the June 2026 IAS 28 amendments; and
+- a call to action for a detailed assessment where the scoping output indicates material change or unresolved judgement.
+
+The accompanying [five-step user guide](output/pdf/ifrs18-pathfinder-user-guide.pdf) is included in the repository.
 
 ## Local preview
 
@@ -44,13 +53,17 @@ git push -u origin main
 
 ## Pre-launch checks
 
-- Open each of the four example profiles and confirm the expected specified-main-business-activity flags.
+- Open all fourteen example profiles across the Channel Islands, local-business and IASB-style groups.
+- Confirm financial-asset, other-asset and not-assessed investment-activity examples behave as intended.
+- Confirm equity-accounted associate/JV results remain in investing and eligible FVTPL returns follow the selected main-business-activity assumption.
+- Confirm the IAS 7 disclosure distinguishes entities with and without specified main business activities.
 - Confirm the footer reports all embedded checks as passed.
 - Test saving and restoring a JSON working file, plus the CSV download.
 - Print or save the results view as PDF.
 - Check the page at mobile and desktop widths.
+- Open the five-step PDF guide from the hero.
 - Confirm the Gerrit Heyneke link opens the intended LinkedIn profile.
 
 ## Scope
 
-This is an educational presentation aid, not a compliance engine or accounting opinion. It does not replace entity-specific technical analysis or professional advice.
+This is an indicative scoping and presentation aid, not a compliance engine, complete disclosure checklist or accounting opinion. Suggested wording is a drafting starting point only. The tool does not replace entity-specific technical analysis or professional advice.
