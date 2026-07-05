@@ -732,6 +732,45 @@
       line-height: 1.35;
     }
 
+    .source-note {
+      display: block;
+      margin-top: 4px;
+      color: var(--forest-2);
+      font-size: 0.63rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .impact-summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .impact-summary-item {
+      padding: 15px 17px;
+      background: rgba(255, 253, 248, 0.7);
+      border: 1px solid var(--line-dark);
+      border-radius: 12px;
+    }
+
+    .impact-summary-item b {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--forest);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+    }
+
+    .impact-summary-item span {
+      display: block;
+      color: var(--ink-soft);
+      font-size: 0.74rem;
+      line-height: 1.4;
+    }
+
     .output-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.65fr);
@@ -781,6 +820,25 @@
       border-left: 3px solid var(--amber);
       border-radius: 7px;
       font-size: 0.76rem;
+    }
+
+    .draft-wording {
+      margin-top: 13px;
+      padding: 13px 14px;
+      color: var(--ink);
+      background: var(--mint-soft);
+      border: 1px solid rgba(34, 91, 82, 0.14);
+      border-radius: 9px;
+      font-size: 0.76rem;
+    }
+
+    .draft-wording b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--forest);
+      font-size: 0.68rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
     }
 
     .status-pill {
@@ -839,6 +897,158 @@
     .assumptions ul { margin: 0; padding-left: 18px; font-size: 0.76rem; }
     .assumptions li + li { margin-top: 6px; }
 
+    .guided-previews {
+      margin: 24px 0;
+      padding: clamp(22px, 4vw, 32px);
+    }
+
+    .guided-previews > h3 {
+      margin-bottom: 6px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.65rem;
+      font-weight: 500;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .preview-card {
+      min-width: 0;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid var(--line);
+      border-radius: 13px;
+    }
+
+    .preview-card h4 {
+      margin: 0 0 6px;
+      color: var(--forest);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+
+    .preview-card p,
+    .preview-card li {
+      color: var(--ink-soft);
+      font-size: 0.76rem;
+      line-height: 1.48;
+    }
+
+    .preview-card ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+
+    .preview-card li + li { margin-top: 5px; }
+
+    .preview-label {
+      display: inline-flex;
+      margin-bottom: 11px;
+      padding: 3px 8px;
+      color: #734b14;
+      background: var(--amber-soft);
+      border-radius: 999px;
+      font-size: 0.62rem;
+      font-weight: 850;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .preview-table-wrap {
+      margin-top: 13px;
+      overflow-x: auto;
+    }
+
+    .preview-table {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+      font-size: 0.7rem;
+    }
+
+    .preview-table th,
+    .preview-table td {
+      padding: 7px 8px;
+      border: 1px solid var(--line);
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .preview-table th {
+      color: var(--forest);
+      background: var(--mint-soft);
+      font-size: 0.62rem;
+      letter-spacing: 0.03em;
+    }
+
+    .preview-table th:first-child,
+    .preview-table td:first-child {
+      min-width: 160px;
+      text-align: left;
+    }
+
+    .preview-table .unallocated td {
+      color: #753229;
+      background: var(--red-soft);
+      font-weight: 760;
+    }
+
+    .scope-banner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 24px;
+      padding: 15px 17px;
+      color: #5d451f;
+      background: var(--amber-soft);
+      border: 1px solid rgba(217, 140, 54, 0.28);
+      border-radius: 12px;
+      font-size: 0.8rem;
+    }
+
+    .scope-banner b {
+      color: #734b14;
+      white-space: nowrap;
+    }
+
+    .cta-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      margin-top: 24px;
+      padding: clamp(24px, 4vw, 34px);
+      color: white;
+      background: var(--forest);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-panel h3 {
+      margin-bottom: 7px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.7rem;
+      font-weight: 500;
+    }
+
+    .cta-panel p {
+      max-width: 760px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.84rem;
+    }
+
+    .cta-panel .button {
+      color: var(--forest);
+      background: white;
+      white-space: nowrap;
+    }
+
     .disclaimer {
       margin-top: 24px;
       padding: 19px 22px;
@@ -859,11 +1069,12 @@
 
     .knowledge-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 17px;
     }
 
     .knowledge-card {
+      grid-column: span 2;
       padding: 25px;
       background: var(--surface-strong);
       border: 1px solid var(--line);
@@ -895,6 +1106,9 @@
     }
 
     .knowledge-card p:last-child { margin-bottom: 0; }
+
+    .knowledge-card:nth-child(4) { grid-column: 2 / span 2; }
+    .knowledge-card:nth-child(5) { grid-column: 4 / span 2; }
 
     .knowledge-subtotals {
       display: grid;
@@ -1111,7 +1325,12 @@
       .snapshot { position: static; }
       .section-heading { grid-template-columns: 1fr; gap: 16px; }
       .output-grid { grid-template-columns: 1fr; }
-      .knowledge-grid { grid-template-columns: 1fr; }
+      .preview-grid { grid-template-columns: 1fr; }
+      .knowledge-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .knowledge-card,
+      .knowledge-card:nth-child(4),
+      .knowledge-card:nth-child(5) { grid-column: auto; }
+      .cta-panel { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 720px) {
@@ -1125,6 +1344,7 @@
       .process-item { min-height: auto; border-top: 1px solid rgba(255, 255, 255, 0.16); border-left: 0; }
       .process-item:first-child { border-top: 0; }
       .comparison-grid { grid-template-columns: 1fr; }
+      .impact-summary { grid-template-columns: 1fr; }
       .field-grid { grid-template-columns: 1fr; }
       .choice-grid { grid-template-columns: 1fr; }
       .choice span { min-height: 50px; }
@@ -1132,6 +1352,7 @@
       .form-actions { position: static; }
       .form-actions .primary { width: 100%; margin: 0; }
       .knowledge-subtotals { grid-template-columns: 1fr; }
+      .knowledge-grid { grid-template-columns: 1fr; }
       .footer-inner { align-items: flex-start; flex-direction: column; }
       .footer-meta { justify-content: flex-start; }
       .privacy-points { grid-template-columns: 1fr; }
@@ -1151,8 +1372,9 @@
       .shell { width: 100%; }
       .section-heading { display: block; margin-bottom: 14px; }
       .section-heading h2 { font-size: 24pt; }
-      .comparison-grid, .output-grid { display: block; }
+      .comparison-grid, .output-grid, .preview-grid { display: block; }
       .card, .output-panel, .statement-card { margin-bottom: 12px; box-shadow: none; break-inside: avoid; }
+      .cta-panel { display: none; }
       details { break-inside: avoid; }
       details > * { display: block !important; }
       summary::after { display: none; }
@@ -1182,13 +1404,14 @@
       <div>
         <p class="eyebrow">Channel Islands · IFRS 18 readiness</p>
         <h1 id="hero-title">Find the shape of your 2027 income statement.</h1>
-        <p class="hero-copy">Built first for Channel Islands financial services—fund administrators, trust companies, alternative funds and structured vehicles—without losing the manufacturing and operating-business cases that make the comparison useful.</p>
+        <p class="hero-copy">A visual IFRS 18 scoping resource for seeing how presentation, subtotals, disclosures and transition work may change—built first for Channel Islands financial services without losing the operating-business cases that make the comparison useful.</p>
         <div class="button-row">
           <a class="button primary" href="#assessment-section">
             Start the assessment
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <button class="button secondary" type="button" id="heroPresetButton">See a fund administrator example</button>
+          <a class="button secondary" href="output/pdf/ifrs18-pathfinder-user-guide.pdf" target="_blank" rel="noopener">Five-step user guide</a>
         </div>
       </div>
       <aside class="hero-aside" aria-label="IFRS 18 overview">
@@ -1233,7 +1456,7 @@
               <span class="section-count">1</span>
               <div>
                 <h3>Entity context</h3>
-                <p>The two specified main business activities change category outcomes.</p>
+                <p>Select the assumptions to use for this illustrative scoping output.</p>
               </div>
             </div>
 
@@ -1268,6 +1491,7 @@
                   </div>
                   <button class="button secondary" type="button" id="loadPresetButton">Load example</button>
                 </div>
+                <span class="field-help">These are user-selected assumptions, not conclusions reached by the tool. IFRS 18.B33 requires the entity's assessment to be evidence-based.</span>
               </div>
 
               <div class="field">
@@ -1298,6 +1522,16 @@
                   <option value="mixed">Mixed basis</option>
                 </select>
                 <span class="field-help">Captured for the implementation checklist; this prototype focuses its transformation on profit or loss.</span>
+              </div>
+
+              <div class="field full" id="investmentTypeField" hidden>
+                <label for="investmentType">Main investment activity used for this illustration</label>
+                <select id="investmentType" name="investment_activity_type">
+                  <option value="financial_assets">Financial assets within IFRS 18.53(c)</option>
+                  <option value="other_assets">Other assets, such as investment property</option>
+                  <option value="not_assessed">Mixed or not yet assessed</option>
+                </select>
+                <span class="field-help">This scoping choice helps illustrate IFRS 18.56 for cash and cash equivalents. Confirm the asset population in a detailed assessment.</span>
               </div>
 
               <div class="field full" id="financingPolicyField" hidden>
@@ -1337,7 +1571,7 @@
                     <span class="switch"><input type="checkbox" id="indirectCashFlow" name="uses_indirect_cash_flow_method" checked><span class="switch-track" aria-hidden="true"></span></span>
                   </label>
                   <label class="toggle-row">
-                    <span><strong>Management-defined performance measures</strong><small>Subtotal of income/expenses used in relevant public communications outside the financial statements</small></span>
+                    <span><strong>Potential management-defined performance measure</strong><small>Select if a subtotal is used in relevant public communications and needs screening</small></span>
                     <span class="switch"><input type="checkbox" id="usesMpm" name="uses_mpm_in_public_communications"><span class="switch-track" aria-hidden="true"></span></span>
                   </label>
                   <label class="toggle-row">
@@ -1362,7 +1596,7 @@
               <div class="field full" id="mpmLabelField" hidden>
                 <label for="mpmLabel">Illustrative MPM label</label>
                 <input id="mpmLabel" name="mpm_label" type="text" value="Adjusted operating profit" maxlength="80">
-                <span class="field-help">What is the name of the management performance measure?</span>
+                <span class="field-help">The output screens this label against the core IFRS 18.117 indicators: a subtotal of income and expenses, used in relevant public communications, communicating management's view, and not otherwise specified by IFRS.</span>
               </div>
             </div>
           </section>
@@ -1443,20 +1677,32 @@
           </div>
         </div>
 
+        <div class="scope-banner">
+          <b>Scope, not compliance</b>
+          <span>This output is an illustrative scoping view based on the assumptions selected above. It previews likely presentation and disclosure work; it does not reach an accounting opinion or prepare complete IFRS 18 disclosures.</span>
+        </div>
+
         <div class="warning-stack" id="warnings" aria-live="polite"></div>
+        <div class="impact-summary" id="impactSummary" aria-live="polite"></div>
 
         <div class="comparison-grid">
           <article class="card statement-card current">
-            <h3>Your current structure</h3>
-            <p class="statement-intro">The line items entered, before applying IFRS 18 category presentation.</p>
+            <h3>Input lines before IFRS 18 mapping</h3>
+            <p class="statement-intro">The lines entered for this illustration. This is not a reconstruction of the entity's current IAS 1 statement.</p>
             <div id="currentStatement"></div>
           </article>
           <article class="card statement-card">
             <h3>Indicative IFRS 18 structure</h3>
-            <p class="statement-intro">Categories and subtotals generated from the embedded rules pack.</p>
+            <p class="statement-intro">Categories and illustrative subtotals generated from the selected assumptions and rules pack.</p>
             <div id="ifrsStatement"></div>
           </article>
         </div>
+
+        <article class="card guided-previews">
+          <h3>Guided disclosure and transition previews</h3>
+          <p class="panel-intro">Drafting prompts, data requirements and likely questions—not completed disclosures or signed-off working papers.</p>
+          <div class="preview-grid" id="guidancePreviews"></div>
+        </article>
 
         <div class="output-grid">
           <article class="card output-panel">
@@ -1476,8 +1722,16 @@
           </article>
         </div>
 
+        <aside class="cta-panel" aria-label="Detailed IFRS 18 assessment">
+          <div>
+            <h3>Do not wait for the year-end audit.</h3>
+            <p>If this scoping result indicates material change—or important assumptions remain uncertain—contact Gerrit Heyneke to discuss a detailed IFRS 18 impact assessment, disclosure review and implementation plan.</p>
+          </div>
+          <a class="button" href="https://www.linkedin.com/in/gerrithey/" target="_blank" rel="noopener noreferrer">Contact Gerrit on LinkedIn</a>
+        </aside>
+
         <div class="disclaimer">
-          <strong>Educational disclaimer.</strong> This tool is an indicative presentation aid, not a compliance engine or accounting opinion. Outputs depend on management judgement, entity-specific facts and accounting policies. They do not replace analysis of specified main business activities, reporting-entity boundaries, liability populations, MPM governance, interim reporting, IAS 7 mapping, tax, NCI or digital reporting requirements. Sector profiles are generic and do not represent, or imply endorsement by, any named Channel Islands organisation. IFRS Accounting Standards and related marks are the property of the IFRS Foundation; this independent tool is not affiliated with or endorsed by the IFRS Foundation.
+          <strong>Scoping disclaimer.</strong> This tool provides an indicative presentation and disclosure preview, not a compliance engine, complete disclosure checklist or accounting opinion. Suggested wording is a drafting starting point only. Outputs depend on management judgement, entity-specific facts and accounting policies and do not replace detailed analysis of specified main business activities, reporting-entity boundaries, liability populations, MPM governance, interim reporting, IAS 7 mapping, tax, NCI or digital reporting requirements. Sector profiles are generic and do not represent, or imply endorsement by, any named Channel Islands organisation. IFRS Accounting Standards and related marks are the property of the IFRS Foundation; this independent tool is not affiliated with or endorsed by the IFRS Foundation.
         </div>
       </div>
     </section>
@@ -1487,7 +1741,7 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">IFRS 18 knowledge base</p>
-            <h2 id="knowledge-title">Three income statement categories, one clearer map.</h2>
+            <h2 id="knowledge-title">Five profit or loss categories, one clearer map.</h2>
           </div>
           <p>These IFRS 18 profit or loss categories are separate from the operating, investing and financing categories used for cash flows under IAS 7.</p>
         </div>
@@ -1510,6 +1764,16 @@
             <p>For liabilities arising solely from raising finance, all related income and expenses are financing.</p>
             <p>For liabilities that do not arise solely from raising finance, such as lease liabilities and defined benefit obligations, only the interest component is financing.</p>
           </article>
+          <article class="knowledge-card">
+            <span class="knowledge-card-number">04 / INCOME TAXES</span>
+            <h3>Income taxes</h3>
+            <p>Tax expense or income included in profit or loss applying IAS 12 is classified here. Other levies and tax-like charges are not automatically income taxes.</p>
+          </article>
+          <article class="knowledge-card">
+            <span class="knowledge-card-number">05 / DISCONTINUED OPERATIONS</span>
+            <h3>Discontinued operations</h3>
+            <p>Income and expenses from discontinued operations are classified here as required by IFRS 5.</p>
+          </article>
         </div>
 
         <div class="knowledge-subtotals">
@@ -1527,7 +1791,7 @@
     <div class="shell footer-inner">
       <a class="footer-brand" href="https://www.linkedin.com/in/gerrithey/" target="_blank" rel="noopener noreferrer">Gerrit Heyneke</a>
       <div class="footer-meta">
-        <span>No cookies · no backend · no data collection</span>
+        <span>No cookies · no backend · no data collection · rules reviewed 5 July 2026</span>
         <span class="test-status" id="testStatus">Running embedded checks…</span>
       </div>
     </div>
@@ -1579,7 +1843,8 @@
     */
 
     const RULES = {
-      version: "2026.07.1",
+      version: "2026.07.2",
+      reviewedAt: "5 July 2026",
       effectiveDate: "Annual periods beginning on or after 1 January 2027",
       categories: ["operating", "investing", "financing", "tax", "discontinued"],
       statement: {
@@ -1595,32 +1860,42 @@
         mpm: ["Why the measure is used", "How it is calculated", "Reconciliation to the most directly comparable IFRS subtotal", "Tax effect of each reconciling item", "NCI effect of each reconciling item", "Tax methodology where relevant"],
         transition: "Line-by-line reconciliation between restated IFRS 18 comparative amounts and amounts previously presented under IAS 1.",
         cashFlow: "IFRS 18 profit or loss categories and IAS 7 cash-flow categories are separate frameworks and are not fully aligned."
+      },
+      sources: {
+        categories: "IFRS 18.47–68",
+        subtotals: "IFRS 18.69–74",
+        specifiedExpenses: "IFRS 18.83–85",
+        mpm: "IFRS 18.117–125 and B113–B142",
+        transition: "IFRS 18.C2–C6",
+        cashFlow: "Amended IAS 7; IFRS 18 Effects Analysis, section 2.5",
+        ias28: "IAS 28.18–19, including June 2026 fair-value-option amendments"
       }
     };
 
     const LINE_ITEM_RULES = [
-      { id: "revenue", label: "Revenue", hint: "Statement line", type: "pnl", rule: "operating", confidence: "rule", why: "Operating is the residual category after the other four categories." },
-      { id: "management_fee_income", label: "Management fee income", hint: "GP / manager service income", type: "pnl", rule: "operating", confidence: "rule", why: "Management fee income from providing services is presented in operating in this illustrative model." },
-      { id: "carried_interest_income", label: "Carried interest income", hint: "GP / manager example; assess entity-specific terms", type: "pnl", rule: "operating", confidence: "judgement", why: "The GP / manager example presents carried interest income in operating; confirm the contractual, measurement and reporting-entity facts." },
-      { id: "cost_of_sales", label: "Cost of sales", hint: "Use for function or mixed presentation", type: "functional", rule: "operating", confidence: "rule", why: "Presented within the operating category." },
-      { id: "other_operating_expenses", label: "Other operating expenses", hint: "Amounts not captured elsewhere", type: "pnl", rule: "operating", confidence: "rule", why: "Residual operating expense in this illustrative model." },
-      { id: "employee_benefits", label: "Employee benefits", hint: "P&L line by nature / note input otherwise", type: "specified_nature", rule: "operating", confidence: "rule", why: "Operating in this simplified input set; specified note input where function is used." },
-      { id: "depreciation", label: "Depreciation", hint: "P&L line by nature / note input otherwise", type: "specified_nature", rule: "operating", confidence: "judgement", why: "Underlying asset facts can affect presentation; this model uses operating as its illustrative default." },
-      { id: "amortisation", label: "Amortisation", hint: "P&L line by nature / note input otherwise", type: "specified_nature", rule: "operating", confidence: "judgement", why: "Underlying asset facts can affect presentation; this model uses operating as its illustrative default." },
-      { id: "impairment", label: "Impairment losses / reversals", hint: "P&L line by nature / note input otherwise", type: "specified_nature", rule: "operating", confidence: "judgement", why: "Classification follows the relevant underlying facts; confirm the category." },
-      { id: "inventory_writedowns", label: "Inventory write-downs / reversals", hint: "P&L line by nature / note input otherwise", type: "specified_nature", rule: "operating", confidence: "rule", why: "Included in operating expenses and the specified-expenses note trigger." },
-      { id: "interest_income_customer_financing", label: "Interest income — customer financing", hint: "Main-business-activity sensitive", type: "pnl", rule: "customer_financing_income", confidence: "rule", why: "Moves to operating when providing financing to customers is a main business activity." },
-      { id: "interest_income_surplus_cash", label: "Interest income on surplus cash deposits", hint: "Presented in investing in this illustrative model", type: "pnl", rule: "investing", confidence: "rule", why: "Returns on surplus cash deposits are presented in the investing category in this illustrative model." },
-      { id: "interest_income_other", label: "Other investment income / fair value movements", hint: "Includes interest where relevant; main-business-activity sensitive", type: "pnl", rule: "investment_income", confidence: "judgement", why: "Classification depends on the assets, source of return and the entity's specified main business activities." },
-      { id: "interest_expense_borrowings", label: "Interest expense — financing-only liabilities", hint: "Policy-choice sensitive", type: "pnl", rule: "financing_liability_expense", confidence: "judgement", why: "The financing-to-customers policy choice can move qualifying amounts into operating." },
-      { id: "interest_expense_lease_liabilities", label: "Interest expense — lease liabilities", hint: "Separate from financing-only liabilities", type: "pnl", rule: "financing", confidence: "rule", why: "Although lease liabilities do not arise solely from raising finance, IFRS 18 requires the interest component arising from those liabilities to be classified in the financing category." },
-      { id: "interest_expense_pension_liabilities", label: "Interest expense — pension liabilities", hint: "Net interest component", type: "pnl", rule: "financing", confidence: "rule", why: "Although defined benefit obligations do not arise solely from raising finance, IFRS 18 requires the net interest component to be classified in the financing category." },
-      { id: "dividends_received", label: "Dividends received", hint: "Main-business-activity sensitive", type: "pnl", rule: "investment_income", confidence: "judgement", why: "Moves to operating where investing in the relevant assets is a main business activity." },
-      { id: "dividends_paid", label: "Dividends paid", hint: "Cash flow input only; excluded from P&L", type: "cashflow", rule: "excluded", confidence: "rule", why: "A distribution to owners, not income or expense in the statement of profit or loss." },
-      { id: "insurance_finance_income_expense", label: "Insurance finance income / expense", hint: "IFRS 17 amount recognised in P&L", type: "pnl", rule: "insurance_operating", confidence: "rule", why: "Insurance finance income and expenses recognised in P&L are classified in operating." },
-      { id: "share_of_profit_associates_jvs", label: "Share of profit — associates / JVs", hint: "Main-business-activity sensitive", type: "pnl", rule: "investment_income", confidence: "judgement", why: "Classification depends on whether investing in the relevant assets is a main business activity." },
-      { id: "tax_expense", label: "Income tax expense / income", hint: "IAS 12 tax", type: "pnl", rule: "tax", confidence: "rule", why: "Presented in the income taxes category." },
-      { id: "discontinued_operations_result", label: "Result from discontinued operations", hint: "IFRS 5 result", type: "pnl", rule: "discontinued", confidence: "rule", why: "Presented in the discontinued operations category." }
+      { id: "revenue", label: "Revenue", hint: "Statement line", type: "pnl", rule: "operating", confidence: "rule", sign: "income", why: "Operating is the residual category after the other four categories.", source: "IFRS 18.52 and 75(a)(i)" },
+      { id: "management_fee_income", label: "Management fee income", hint: "GP / manager service income", type: "pnl", rule: "operating", confidence: "rule", sign: "income", why: "Management fee income from providing services is presented in operating in this illustrative model.", source: "IFRS 18.52 and B42" },
+      { id: "carried_interest_income", label: "Carried interest income", hint: "GP / manager example; assess entity-specific terms", type: "pnl", rule: "operating", confidence: "judgement", sign: "flexible", why: "The GP / manager example presents carried interest income in operating; confirm the contractual, measurement and reporting-entity facts.", source: "IFRS 18.52; tool judgement" },
+      { id: "cost_of_sales", label: "Cost of sales", hint: "Use for function or mixed presentation", type: "functional", rule: "operating", confidence: "rule", sign: "expense", why: "Presented within the operating category.", source: "IFRS 18.78–82" },
+      { id: "other_operating_expenses", label: "Other operating expenses", hint: "Amounts not captured elsewhere", type: "pnl", rule: "operating", confidence: "rule", sign: "expense", why: "Residual operating expense in this illustrative model.", source: "IFRS 18.52 and 78–82" },
+      { id: "employee_benefits", label: "Employee benefits", hint: "P&L line by nature / note input otherwise", type: "specified_nature", rule: "operating", confidence: "rule", sign: "expense", why: "Operating in this simplified input set; specified note input where function is used.", source: "IFRS 18.80–83" },
+      { id: "depreciation", label: "Depreciation", hint: "P&L line by nature / note input otherwise", type: "specified_nature", rule: "operating", confidence: "judgement", sign: "expense", why: "Underlying asset facts can affect presentation; this model uses operating as its illustrative default.", source: "IFRS 18.54, B47 and B49" },
+      { id: "amortisation", label: "Amortisation", hint: "P&L line by nature / note input otherwise", type: "specified_nature", rule: "operating", confidence: "judgement", sign: "expense", why: "Underlying asset facts can affect presentation; this model uses operating as its illustrative default.", source: "IFRS 18.54 and B49" },
+      { id: "impairment", label: "Impairment losses / reversals", hint: "P&L line by nature / note input otherwise", type: "specified_nature", rule: "operating", confidence: "judgement", sign: "flexible", why: "Classification follows the relevant underlying facts; this model uses operating as its illustrative default.", source: "IFRS 18.54, B47 and B49" },
+      { id: "inventory_writedowns", label: "Inventory write-downs / reversals", hint: "P&L line by nature / note input otherwise", type: "specified_nature", rule: "operating", confidence: "rule", sign: "flexible", why: "Included in operating expenses and the specified-expenses note trigger.", source: "IFRS 18.83(a)(v)" },
+      { id: "interest_income_customer_financing", label: "Interest income — customer financing", hint: "Main-business-activity sensitive", type: "pnl", rule: "customer_financing_income", confidence: "judgement", sign: "income", why: "Moves to operating when providing financing to customers is a selected main-business-activity assumption.", source: "IFRS 18.49–50 and B48(c)–B49" },
+      { id: "interest_income_surplus_cash", label: "Interest income on cash and cash equivalents", hint: "Activity and policy sensitive", type: "pnl", rule: "cash_equivalents_income", confidence: "judgement", sign: "income", why: "Classification depends on the selected investment activity, customer-financing activity and related policy.", source: "IFRS 18.56–57 and B39" },
+      { id: "interest_income_other", label: "Other investment income / fair value movements", hint: "Includes interest where relevant; main-business-activity sensitive", type: "pnl", rule: "investment_income", confidence: "judgement", sign: "flexible", why: "Classification depends on the assets, source of return and the entity's specified main business activities.", source: "IFRS 18.53–58 and B45–B49" },
+      { id: "associate_jv_fvtpl_returns", label: "Fair value returns — eligible associates / JVs at FVTPL", hint: "June 2026 IAS 28 amendment; election and activity sensitive", type: "pnl", rule: "investment_income", confidence: "judgement", sign: "flexible", why: "Eligible fair-value returns can be operating where investing in the relevant assets is a main business activity.", source: "IFRS 18.55(b); IAS 28.18–19 (June 2026 amendments)" },
+      { id: "interest_expense_borrowings", label: "Interest expense — financing-only liabilities", hint: "Policy-choice sensitive", type: "pnl", rule: "financing_liability_expense", confidence: "judgement", sign: "expense", why: "The financing-to-customers policy choice can move qualifying amounts into operating.", source: "IFRS 18.59–60 and 65–66" },
+      { id: "interest_expense_lease_liabilities", label: "Interest expense — lease liabilities", hint: "Separate from financing-only liabilities", type: "pnl", rule: "financing", confidence: "rule", sign: "expense", why: "Although lease liabilities do not arise solely from raising finance, IFRS 18 requires their identified interest component in financing.", source: "IFRS 18.61 and B53–B54" },
+      { id: "interest_expense_pension_liabilities", label: "Interest expense — pension liabilities", hint: "Net interest component", type: "pnl", rule: "financing", confidence: "rule", sign: "expense", why: "The identified net interest component is classified in financing.", source: "IFRS 18.61 and B53–B54" },
+      { id: "dividends_received", label: "Dividends received — other investments", hint: "Excludes equity-method distributions; main-business-activity sensitive", type: "pnl", rule: "investment_income", confidence: "judgement", sign: "income", why: "Moves to operating where investing in the relevant assets is a selected main-business-activity assumption.", source: "IFRS 18.53–58 and B47" },
+      { id: "dividends_paid", label: "Dividends paid", hint: "Cash flow input only; excluded from P&L", type: "cashflow", rule: "excluded", confidence: "rule", sign: "expense", why: "A distribution to owners, not income or expense in the statement of profit or loss.", source: "Conceptual Framework; amended IAS 7 for cash-flow classification" },
+      { id: "insurance_finance_income_expense", label: "Insurance finance income / expense", hint: "IFRS 17 amount recognised in P&L", type: "pnl", rule: "insurance_operating", confidence: "rule", sign: "flexible", why: "Insurance finance income and expenses recognised in profit or loss are classified in operating.", source: "IFRS 18.64(b)" },
+      { id: "share_of_profit_associates_jvs", label: "Share of profit — equity-accounted associates / JVs", hint: "Separate from investments measured at FVTPL", type: "pnl", rule: "equity_method_result", confidence: "rule", sign: "flexible", why: "Results from investments accounted for using the equity method are classified in investing.", source: "IFRS 18.55(a), 75(a)(iii) and B38" },
+      { id: "tax_expense", label: "Income tax expense / income", hint: "IAS 12 tax only", type: "pnl", rule: "tax", confidence: "rule", sign: "flexible", why: "Presented in the income taxes category; other tax-like charges require separate analysis.", source: "IFRS 18.67" },
+      { id: "discontinued_operations_result", label: "Result from discontinued operations", hint: "IFRS 5 result", type: "pnl", rule: "discontinued", confidence: "rule", sign: "flexible", why: "Presented in the discontinued operations category.", source: "IFRS 18.68" }
     ];
 
     const PRESETS = {
@@ -1644,7 +1919,7 @@
         label: "Investment / private equity fund",
         description: "Alternative-investment profile for private equity, venture, credit and diversified funds.",
         assumption: "Investing in relevant assets is selected as a main business activity, but that conclusion must be evidenced for the reporting entity.",
-        invests: true, finances: false, sfp: "liquidity", expense: "nature",
+        invests: true, investmentType: "financial_assets", finances: false, sfp: "liquidity", expense: "nature",
         financingPolicy: "split", indirect: false, mpm: false, eps: false, firstYear: true,
         interim: true, xbrl: true, unit: "£000",
         amounts: {
@@ -1652,15 +1927,15 @@
           employee_benefits: -30, depreciation: -2, amortisation: 0, impairment: -15, inventory_writedowns: 0,
           interest_income_customer_financing: 0, interest_income_other: 1250, interest_expense_borrowings: -180,
           interest_expense_lease_liabilities: 0, interest_expense_pension_liabilities: 0, dividends_received: 320,
-          dividends_paid: -900, insurance_finance_income_expense: 0, share_of_profit_associates_jvs: 80,
+          dividends_paid: -900, insurance_finance_income_expense: 0, associate_jv_fvtpl_returns: 80, share_of_profit_associates_jvs: 0,
           tax_expense: 0, discontinued_operations_result: 0
         }
       },
       real_estate_fund: {
         label: "Real estate fund",
         description: "Property-investment profile spanning rental returns, fair value movements and external financing.",
-        assumption: "The preset selects investing in assets as a main business activity; asset use, ownership structure and the source of each return still require analysis.",
-        invests: true, finances: false, sfp: "current_noncurrent", expense: "nature",
+        assumption: "The preset selects investing in property as a main business activity and illustrates an eligible IAS 28 fair-value election; asset use, ownership structure and elections still require analysis.",
+        invests: true, investmentType: "other_assets", finances: false, sfp: "current_noncurrent", expense: "nature",
         financingPolicy: "split", indirect: true, mpm: true, eps: false, firstYear: true,
         interim: true, xbrl: true, unit: "£000",
         amounts: {
@@ -1668,7 +1943,7 @@
           employee_benefits: -35, depreciation: 0, amortisation: 0, impairment: -20, inventory_writedowns: 0,
           interest_income_customer_financing: 0, interest_income_surplus_cash: 35, interest_income_other: 470, interest_expense_borrowings: -210,
           interest_expense_lease_liabilities: 0, interest_expense_pension_liabilities: 0, dividends_received: 0,
-          dividends_paid: -500, insurance_finance_income_expense: 0, share_of_profit_associates_jvs: 65,
+          dividends_paid: -500, insurance_finance_income_expense: 0, associate_jv_fvtpl_returns: 65, share_of_profit_associates_jvs: 0,
           tax_expense: -15, discontinued_operations_result: 0
         }
       },
@@ -1692,7 +1967,7 @@
         label: "LP / investment holding vehicle",
         description: "Limited-partnership or holding-vehicle profile for investment returns and partner distributions.",
         assumption: "The preset selects investing in assets as a main business activity; legal form alone does not determine the IFRS 18 outcome.",
-        invests: true, finances: false, sfp: "liquidity", expense: "nature",
+        invests: true, investmentType: "financial_assets", finances: false, sfp: "liquidity", expense: "nature",
         financingPolicy: "split", indirect: false, mpm: false, eps: false, firstYear: true,
         interim: false, xbrl: false, unit: "£000",
         amounts: {
@@ -1700,7 +1975,7 @@
           employee_benefits: 0, depreciation: 0, amortisation: 0, impairment: 0, inventory_writedowns: 0,
           interest_income_customer_financing: 0, interest_income_other: 760, interest_expense_borrowings: -80,
           interest_expense_lease_liabilities: 0, interest_expense_pension_liabilities: 0, dividends_received: 140,
-          dividends_paid: -600, insurance_finance_income_expense: 0, share_of_profit_associates_jvs: 210,
+          dividends_paid: -600, insurance_finance_income_expense: 0, associate_jv_fvtpl_returns: 210, share_of_profit_associates_jvs: 0,
           tax_expense: 0, discontinued_operations_result: 0
         }
       },
@@ -1708,7 +1983,7 @@
         label: "PCC / cell company",
         description: "Channel Islands cell-company profile for fund, insurance or structured-asset activity.",
         assumption: "This is deliberately generic: the core, cells, legal entity, consolidation and financial-statement perimeter must be resolved before applying category logic.",
-        invests: true, finances: false, sfp: "liquidity", expense: "nature",
+        invests: true, investmentType: "not_assessed", finances: false, sfp: "liquidity", expense: "nature",
         financingPolicy: "split", indirect: true, mpm: false, eps: false, firstYear: true,
         interim: true, xbrl: false, unit: "£000",
         amounts: {
@@ -1839,6 +2114,7 @@
         description: "IASB-style baseline for insurance and investment activity.",
         assumption: "Investing in assets is selected as a specified main business activity.",
         invests: true,
+        investmentType: "financial_assets",
         finances: false,
         sfp: "liquidity",
         expense: "nature",
@@ -1855,7 +2131,7 @@
           employee_benefits: -210, depreciation: -25, amortisation: -8, impairment: -14, inventory_writedowns: 0,
           interest_income_customer_financing: 0, interest_income_other: 285, interest_expense_borrowings: -34,
           interest_expense_lease_liabilities: -5, interest_expense_pension_liabilities: -3, dividends_received: 62,
-          dividends_paid: -74, insurance_finance_income_expense: -88, share_of_profit_associates_jvs: 21,
+          dividends_paid: -74, insurance_finance_income_expense: -88, associate_jv_fvtpl_returns: 21, share_of_profit_associates_jvs: 0,
           tax_expense: -118, discontinued_operations_result: 0
         }
       },
@@ -1864,6 +2140,7 @@
         description: "IASB-style baseline for a bank combining investment and customer-financing activity.",
         assumption: "Both specified main business activities and the all-operating liability policy are selected.",
         invests: true,
+        investmentType: "financial_assets",
         finances: true,
         sfp: "liquidity",
         expense: "nature",
@@ -1888,7 +2165,7 @@
         label: "Custom profile",
         description: "No example assumptions loaded.",
         assumption: "All profile conclusions must be set from the reporting entity's own facts.",
-        invests: false, finances: false, sfp: "current_noncurrent", expense: "function",
+        invests: false, investmentType: "not_assessed", finances: false, sfp: "current_noncurrent", expense: "function",
         financingPolicy: "split", indirect: true, mpm: false, eps: false, firstYear: true,
         interim: false, xbrl: false, unit: "£000", amounts: {}
       }
@@ -1948,6 +2225,7 @@
       return {
         profile: $("#entityProfile").value,
         invests: $("#investsMain").checked,
+        investmentType: $("#investmentType").value,
         finances: $("#financesMain").checked,
         sfp: $("#sfpPresentation").value,
         expense,
@@ -1979,8 +2257,13 @@
         case "tax": return "tax";
         case "discontinued": return "discontinued";
         case "insurance_operating": return "operating";
+        case "equity_method_result": return "investing";
         case "customer_financing_income": return data.finances ? "operating" : "investing";
         case "investment_income": return data.invests ? "operating" : "investing";
+        case "cash_equivalents_income":
+          if (data.invests && data.investmentType === "financial_assets") return "operating";
+          if (data.finances && data.financingPolicy === "all_operating") return "operating";
+          return "investing";
         case "financing_liability_expense":
           return data.finances && data.financingPolicy === "all_operating" ? "operating" : "financing";
         default: return "operating";
@@ -2047,11 +2330,29 @@
       if (data.finances && Number(data.amounts.interest_income_customer_financing) === 0) {
         warnings.push({ type: "info", text: "Customer financing is selected as a main business activity, but no customer-financing interest has been entered. Confirm that the activity and line-item inputs are complete." });
       }
+      if (data.invests && data.investmentType === "not_assessed" && Number(data.amounts.interest_income_surplus_cash) !== 0) {
+        warnings.push({ type: "warning", text: "Cash and cash-equivalent income is present, but the main investment activity is mixed or not assessed. The illustration uses investing; confirm IFRS 18.56 before relying on that category." });
+      }
+      if (Number(data.amounts.share_of_profit_associates_jvs) !== 0) {
+        warnings.push({ type: "info", text: "The associate/JV amount is identified as an equity-method result and is therefore shown in investing, including when investing is a main business activity." });
+      }
+      if (Number(data.amounts.associate_jv_fvtpl_returns) !== 0) {
+        warnings.push({ type: "info", text: "The fair-value associate/JV illustration assumes an eligible and elected IAS 28 fair-value option under the June 2026 amendments. Confirm eligibility, election and measurement basis." });
+      }
+      if (data.expense === "nature" && data.invests && ["depreciation", "amortisation", "impairment"].some(id => Number(data.amounts[id]) !== 0)) {
+        warnings.push({ type: "warning", text: "Depreciation, amortisation and impairment use an illustrative operating default. In a detailed assessment, classify them by reference to the underlying assets." });
+      }
       if (data.profile === "bank" && (!data.finances || !data.invests)) {
         warnings.push({ type: "warning", text: "The bank example normally includes both specified main business activities. Your amended selection is treated as a custom judgement." });
       }
+      if (data.profile === "bank") {
+        warnings.push({ type: "info", text: "The bank preset is a compact scoping illustration. A detailed statement must map relevant interest, fee, trading, investment and credit-impairment lines required by IFRS Accounting Standards." });
+      }
       if (data.profile === "insurer" && !data.invests) {
         warnings.push({ type: "warning", text: "The insurer / investor example normally selects investing in assets as a main business activity." });
+      }
+      if (data.profile === "insurer") {
+        warnings.push({ type: "info", text: "The insurer preset is a compact scoping illustration. A detailed assessment must begin with the IFRS 17 presentation lines, including insurance revenue, insurance service expenses and insurance finance amounts." });
       }
       if (PROFILE_GROUPS.funds.includes(data.profile) && !data.invests) {
         warnings.push({ type: "warning", text: "This fund or investment-vehicle profile normally starts with investing in assets selected. If you switch it off, document the reporting-entity facts supporting that conclusion." });
@@ -2077,11 +2378,22 @@
       if (data.finances && data.financingPolicy === "all_operating") {
         warnings.push({ type: "info", text: "Because the operating-category policy is selected for qualifying liabilities not related to customer financing, the required PBFIT subtotal is not applied in this output. Any additional subtotal needs a faithful label." });
       }
+      LINE_ITEM_RULES.forEach(item => {
+        const amount = Number(data.amounts[item.id]) || 0;
+        if (amount === 0 || item.sign === "flexible") return;
+        if (item.sign === "income" && amount < 0) {
+          warnings.push({ type: "warning", text: `${item.label} is normally entered as income, but a negative amount was entered. Confirm whether this represents a loss, reversal or correction.` });
+        }
+        if (item.sign === "expense" && amount > 0) {
+          warnings.push({ type: "warning", text: `${item.label} is normally entered as an expense, but a positive amount was entered. Confirm whether this represents a reversal or income item.` });
+        }
+      });
       return warnings;
     }
 
     function buildDisclosures(data) {
       const specifiedTriggered = data.expense === "function" || data.expense === "mixed";
+      const hasSpecifiedActivity = data.invests || data.finances;
       return [
         {
           title: "Specified expenses by nature",
@@ -2089,15 +2401,23 @@
           tone: specifiedTriggered ? "active" : "not-triggered",
           body: specifiedTriggered
             ? `Prepare a single note for ${RULES.disclosures.specifiedExpenses.join(", ").toLowerCase()}, showing totals and their allocation to operating line items.`
-            : "A pure nature presentation does not trigger this function-presentation note in the embedded rules."
+            : "A pure nature presentation does not trigger this function-presentation note in the embedded rules.",
+          source: RULES.sources.specifiedExpenses,
+          draft: specifiedTriggered
+            ? "Illustrative starting point: The entity presents one or more operating expense line items by function. The following note disaggregates the specified nature expenses and identifies the operating line items in which those amounts are included."
+            : ""
         },
         {
-          title: `MPM note · ${data.mpmLabel}`,
-          status: data.mpm ? "Triggered" : "Not triggered",
+          title: `Potential MPM · ${data.mpmLabel}`,
+          status: data.mpm ? "Screening required" : "Not indicated",
           tone: data.mpm ? "active" : "not-triggered",
           body: data.mpm
             ? `Include, in one note: ${RULES.disclosures.mpm.join("; ")}. Confirm first that the measure meets the IFRS 18 definition of a MPM.`
-            : "No MPM is indicated in relevant public communications. A social-media post on its own is outside the public-communications set used for identifying an MPM."
+            : "No potential MPM is selected. Continue to review relevant management commentary, press releases and investor presentations; oral communications, transcripts of oral communications and social-media posts are excluded for this purpose.",
+          source: RULES.sources.mpm,
+          draft: data.mpm
+            ? `Illustrative starting point: Management uses “${data.mpmLabel}” to communicate its view of an aspect of the entity's financial performance. The measure is calculated as [describe calculation] and reconciles to [most directly comparable IFRS subtotal] as follows: [insert reconciliation]. This wording is incomplete until the IFRS 18 definition, tax effects, NCI effects and comparative requirements are assessed.`
+            : ""
         },
         {
           title: "Transition reconciliation",
@@ -2105,7 +2425,11 @@
           tone: data.firstYear ? "active" : "review",
           body: data.firstYear
             ? RULES.disclosures.transition
-            : "Confirm whether transition disclosures have already been completed and whether comparative presentation remains consistent."
+            : "Confirm whether transition disclosures have already been completed and whether comparative presentation remains consistent.",
+          source: RULES.sources.transition,
+          draft: data.firstYear
+            ? "Illustrative starting point: For each comparative profit-or-loss line item, reconcile the amount previously presented applying IAS 1 to the restated amount presented applying IFRS 18, with clear descriptions of reclassifications."
+            : ""
         },
         {
           title: "Cash flow classification",
@@ -2116,21 +2440,25 @@
             data.indirect
               ? "The indirect method reconciliation starts from operating profit or loss."
               : "If the indirect method is used, the reconciliation starts from operating profit or loss.",
-            "Interest paid and dividends paid are classified as financing cash flows.",
-            "Interest received and dividends received are generally classified as operating cash flows under amended IAS 7, subject to the requirements for entities with specified main business activities.",
+            hasSpecifiedActivity
+              ? "Dividends paid are financing. Interest paid, interest received and dividends received each require a single-category assessment under the amended IAS 7 requirements for entities with specified main business activities."
+              : "For an entity without specified main business activities, interest and dividends received are investing cash flows; interest and dividends paid are financing cash flows.",
             "An investment entity may classify fair value gains and investment income within operating profit, while the related acquisition and disposal cash flows remain investing activities."
           ],
-          note: data.invests
-            ? "This profile selects investing in assets as a specified main business activity. Do not copy its IFRS 18 operating classification automatically into the IAS 7 cash flow statement; map each cash flow separately."
-            : "Do not copy an IFRS 18 profit or loss category automatically into the IAS 7 cash flow statement; map each cash flow separately."
+          note: "Do not copy an IFRS 18 profit-or-loss category automatically into the IAS 7 statement of cash flows; map each cash flow separately.",
+          source: RULES.sources.cashFlow
         },
         {
           title: "Specified main business activity disclosure",
-          status: data.invests || data.finances ? "Triggered" : "Not triggered",
-          tone: data.invests || data.finances ? "active" : "not-triggered",
-          body: data.invests || data.finances
+          status: hasSpecifiedActivity ? "Triggered" : "Not triggered",
+          tone: hasSpecifiedActivity ? "active" : "not-triggered",
+          body: hasSpecifiedActivity
             ? `Disclose that the entity ${[data.invests ? "invests in assets" : "", data.finances ? "provides financing to customers" : ""].filter(Boolean).join(" and ")} as a main business activity, and document changes in that assessment.`
-            : "No specified main business activity is selected."
+            : "No specified main business activity is selected.",
+          source: "IFRS 18.49–51 and B30–B41",
+          draft: hasSpecifiedActivity
+            ? `Illustrative starting point: Management has assessed that the entity ${[data.invests ? "invests in assets" : "", data.finances ? "provides financing to customers" : ""].filter(Boolean).join(" and ")} as a main business activity. The assessment is based on [describe evidence, reporting-entity boundary and management performance information].`
+            : ""
         },
         {
           title: "Additional EPS amounts",
@@ -2138,7 +2466,11 @@
           tone: data.eps ? "review" : "not-triggered",
           body: data.eps
             ? "Present permitted additional per-share amounts only in the notes and use an eligible numerator."
-            : "No additional EPS amount has been indicated."
+            : "No additional EPS amount has been indicated.",
+          source: "IAS 33 as amended by IFRS 18",
+          draft: data.eps
+            ? "Screening prompt: identify the numerator and confirm it is a total or subtotal identified in IFRS 18 or an identified MPM before drafting the note-only per-share disclosure."
+            : ""
         }
       ];
     }
@@ -2205,6 +2537,7 @@
               <span class="confidence ${item.confidence}">${confidenceLabel}</span>
             </span>
             <span class="why-note">Why: ${escapeHtml(item.why)}</span>
+            <span class="source-note">Technical basis: ${escapeHtml(item.source)}</span>
           </td>
           <td>${formatNumber(item.amount, unit, false)}</td>
         </tr>`;
@@ -2253,6 +2586,21 @@
         </div>`).join("");
     }
 
+    function renderImpactSummary(result) {
+      const populated = Object.values(result.categories).flat().length;
+      const judgements = Object.values(result.categories).flat().filter(item => item.confidence === "judgement").length;
+      const workstreams = result.disclosures.filter(item => ["Triggered", "Screening required", "Review required"].includes(item.status)).length;
+      $("#impactSummary").innerHTML = [
+        [populated, "populated profit-or-loss lines mapped"],
+        [judgements, "mapped lines carrying a judgement label"],
+        [workstreams, "disclosure or presentation workstreams highlighted"]
+      ].map(([value, label]) => `
+        <div class="impact-summary-item">
+          <b>${escapeHtml(value)}</b>
+          <span>${escapeHtml(label)}</span>
+        </div>`).join("");
+    }
+
     function renderDisclosures(result) {
       $("#disclosures").innerHTML = result.disclosures.map((item, index) => `
         <details ${index === 0 && item.tone === "active" ? "open" : ""}>
@@ -2264,8 +2612,93 @@
             <p>${escapeHtml(item.body)}</p>
             ${item.points?.length ? `<ul>${item.points.map(point => `<li>${escapeHtml(point)}</li>`).join("")}</ul>` : ""}
             ${item.note ? `<p class="details-note">${escapeHtml(item.note)}</p>` : ""}
+            ${item.draft ? `<div class="draft-wording"><b>Suggested wording - adapt to your facts</b>${escapeHtml(item.draft)}</div>` : ""}
+            ${item.source ? `<span class="source-note">Technical basis: ${escapeHtml(item.source)}</span>` : ""}
           </div>
         </details>`).join("");
+    }
+
+    function renderGuidancePreviews(result) {
+      const data = result.data;
+      const specifiedTriggered = data.expense !== "nature";
+      const natureItems = [
+        ["depreciation", "Depreciation"],
+        ["amortisation", "Amortisation"],
+        ["employee_benefits", "Employee benefits"],
+        ["impairment", "Impairment"],
+        ["inventory_writedowns", "Inventory write-downs"]
+      ];
+      const allocationRows = ["Cost of sales", "Administrative / other operating expenses", "Other operating line items"];
+      const allocationTable = specifiedTriggered ? `
+        <div class="preview-table-wrap">
+          <table class="preview-table">
+            <thead><tr><th>Operating line item</th>${natureItems.map(([, label]) => `<th>${escapeHtml(label)}</th>`).join("")}</tr></thead>
+            <tbody>
+              ${allocationRows.map(label => `<tr><td>${escapeHtml(label)}</td>${natureItems.map(() => "<td>—</td>").join("")}</tr>`).join("")}
+              <tr><td>Total entered</td>${natureItems.map(([id]) => `<td>${formatNumber(data.amounts[id], data.unit, false)}</td>`).join("")}</tr>
+              <tr class="unallocated"><td>Not allocated in this preview</td>${natureItems.map(([id]) => `<td>${formatNumber(data.amounts[id], data.unit, false)}</td>`).join("")}</tr>
+            </tbody>
+          </table>
+        </div>` : "";
+
+      const transitionRows = Object.values(result.categories).flat();
+      const transitionTable = transitionRows.length ? `
+        <div class="preview-table-wrap">
+          <table class="preview-table">
+            <thead><tr><th>Input line</th><th>Illustrative IFRS 18 category</th><th>Amount</th></tr></thead>
+            <tbody>${transitionRows.map(item => `
+              <tr>
+                <td>${escapeHtml(item.label)}</td>
+                <td>${escapeHtml(item.category === "tax" ? "Income taxes" : item.category)}</td>
+                <td>${formatNumber(item.amount, data.unit, false)}</td>
+              </tr>`).join("")}</tbody>
+          </table>
+        </div>` : '<p>Add amounts to populate the mapping preview.</p>';
+
+      const evidenceQuestions = [
+        "What is the reporting entity and financial-statement perimeter for this assessment?",
+        data.invests ? "Which assets are part of the selected investing main business activity, and how are they measured?" : "Is investing in particular assets a main business activity, based on evidence rather than legal form alone?",
+        data.finances ? "Which liabilities relate to customer financing, and is the selected policy applied consistently to the full qualifying population?" : "Does the entity provide financing to customers as a main business activity or only incidentally?",
+        data.mpm ? `Where is “${data.mpmLabel}” communicated, how is it calculated, and what is the most directly comparable IFRS subtotal?` : "Which subtotals appear in management commentary, press releases or investor presentations?",
+        specifiedTriggered ? "Can each specified nature total be allocated to every operating line item presented by function?" : "Does presentation by nature provide the most useful structured summary of operating expenses?"
+      ];
+
+      $("#guidancePreviews").innerHTML = `
+        <section class="preview-card">
+          <span class="preview-label">${specifiedTriggered ? "Allocation required" : "Not triggered by pure nature presentation"}</span>
+          <h4>Specified-expenses allocation preview</h4>
+          <p>${specifiedTriggered
+            ? "The table shows the five totals entered and the allocation work still required. Dashes are intentional: this scoping tool does not invent allocations."
+            : "A pure nature presentation does not trigger the paragraph 83 function-presentation note in this illustration."}</p>
+          ${allocationTable}
+          <span class="source-note">Technical basis: ${escapeHtml(RULES.sources.specifiedExpenses)}</span>
+        </section>
+        <section class="preview-card">
+          <span class="preview-label">${data.mpm ? "Potential MPM - screen before drafting" : "MPM screening prompt"}</span>
+          <h4>MPM helper</h4>
+          <p>Confirm whether the measure is a subtotal of income and expenses, used in relevant public communications, communicates management's view of performance, and is not otherwise specified by IFRS.</p>
+          <ul>
+            <li>Identify the communication and reporting period.</li>
+            <li>Document the calculation and most directly comparable IFRS subtotal.</li>
+            <li>Prepare tax and NCI effects for each reconciling item.</li>
+            <li>Track changes, additions and cessations with comparatives.</li>
+          </ul>
+          ${data.mpm ? `<div class="draft-wording"><b>Illustrative drafting prompt</b>Management uses “${escapeHtml(data.mpmLabel)}” to communicate [aspect of performance]. It is calculated as [method] and reconciles to [IFRS subtotal]. Complete the paragraph 123 disclosures before use.</div>` : ""}
+          <span class="source-note">Technical basis: ${escapeHtml(RULES.sources.mpm)}</span>
+        </section>
+        <section class="preview-card">
+          <span class="preview-label">${data.firstYear ? "First-year reconciliation required" : "Transition review"}</span>
+          <h4>Transition mapping preview</h4>
+          <p>This maps populated inputs to their illustrative categories. IFRS 18.C3 requires the comparative reconciliation to start from the amounts actually presented under IAS 1, not merely these inputs.</p>
+          ${transitionTable}
+          <span class="source-note">Technical basis: ${escapeHtml(RULES.sources.transition)}</span>
+        </section>
+        <section class="preview-card">
+          <span class="preview-label">Evidence and review questions</span>
+          <h4>What a detailed assessment will ask</h4>
+          <ul>${evidenceQuestions.map(question => `<li>${escapeHtml(question)}</li>`).join("")}</ul>
+          <div class="draft-wording"><b>Review boundary</b>Use these questions to prepare a discussion with management, your adviser or auditor. The tool does not approve assumptions or provide audit sign-off.</div>
+        </section>`;
     }
 
     function renderChecklist(result) {
@@ -2284,7 +2717,11 @@
         data.expense === "nature"
           ? "Nature expense amounts are included in the P&L; cost of sales is treated as a note-only input."
           : "Specified nature amounts are treated as note inputs and excluded from P&L totals to reduce automatic double counting.",
-        "Other interest, dividends and associate/JV results use the investing-main-business-activity flag and remain judgement-sensitive.",
+        "Other investment income, eligible fair-value associate/JV returns and dividends use the selected main-business-activity assumption and remain judgement-sensitive.",
+        "Equity-accounted associate/JV results are presented separately in investing.",
+        data.invests
+          ? `The investment activity used for the cash-equivalent illustration is “${data.investmentType.replaceAll("_", " ")}”.`
+          : "No investing-in-assets main business activity is assumed.",
         "Lease and pension interest remain in financing in this simplified model; liability terms and the applicable IFRS requirements must be assessed.",
         data.finances
           ? `The customer-financing policy is modelled as “${data.financingPolicy === "all_operating" ? "operating for qualifying unrelated financing-only liabilities" : "financing for qualifying unrelated financing-only liabilities"}”.`
@@ -2301,7 +2738,7 @@
         result.data.finances ? `${result.data.invests ? "finances" : "Finances"} customers` : ""
       ].filter(Boolean);
       const critical = result.checklist.filter(item => item.priority === "Critical").length;
-      const triggered = result.disclosures.filter(item => item.status === "Triggered").length;
+      const triggered = result.disclosures.filter(item => ["Triggered", "Screening required", "Review required"].includes(item.status)).length;
       const nonZero = Object.values(result.data.amounts).some(value => Number(value) !== 0);
 
       $("#snapshot-title").textContent = preset.label;
@@ -2322,9 +2759,11 @@
       const result = analyse();
       renderSnapshot(result);
       renderWarnings(result);
+      renderImpactSummary(result);
       renderCurrent(result);
       renderIfrs(result);
       renderDisclosures(result);
+      renderGuidancePreviews(result);
       renderChecklist(result);
       renderAssumptions(result);
       $("#resultsTimestamp").textContent = `Live output · rules pack ${RULES.version} · ${result.data.unit}`;
@@ -2352,6 +2791,7 @@
       const preset = PRESETS[key] || PRESETS.manufacturer;
       $("#entityProfile").value = key;
       $("#investsMain").checked = preset.invests;
+      $("#investmentType").value = preset.investmentType || "not_assessed";
       $("#financesMain").checked = preset.finances;
       $("#sfpPresentation").value = preset.sfp;
       $("#financingPolicy").value = preset.financingPolicy;
@@ -2377,6 +2817,7 @@
     }
 
     function updateConditionalFields() {
+      $("#investmentTypeField").hidden = !$("#investsMain").checked;
       $("#financingPolicyField").hidden = !$("#financesMain").checked;
       $("#mpmLabelField").hidden = !$("#usesMpm").checked;
       const expense = document.querySelector('input[name="operating_expense_presentation"]:checked')?.value || "function";
@@ -2406,6 +2847,7 @@
         inputs: {
           entity_profile: result.data.profile,
           invests_in_assets_as_main_business_activity: result.data.invests,
+          investment_activity_type: result.data.investmentType,
           provides_financing_to_customers_as_main_business_activity: result.data.finances,
           sfp_presentation: result.data.sfp,
           operating_expense_presentation: result.data.expense,
@@ -2429,14 +2871,22 @@
           categories: Object.fromEntries(
             Object.entries(result.categories).map(([category, items]) => [
               category,
-              items.map(item => ({ id: item.id, label: item.label, amount: item.amount, confidence: item.confidence }))
+              items.map(item => ({
+                id: item.id,
+                label: item.label,
+                amount: item.amount,
+                classification: item.category,
+                confidence: item.confidence,
+                rationale: item.why,
+                source: item.source
+              }))
             ])
           ),
           disclosures: result.disclosures,
           checklist: result.checklist,
           warnings: result.warnings
         },
-        disclaimer: "Indicative educational output only; not accounting advice or a substitute for entity-specific technical analysis."
+        disclaimer: "Indicative scoping output only; not a compliance engine, complete disclosure checklist, accounting opinion or substitute for entity-specific technical analysis."
       };
     }
 
@@ -2475,6 +2925,9 @@
       const allowedExpense = ["nature", "function", "mixed"].includes(inputs.operating_expense_presentation)
         ? inputs.operating_expense_presentation
         : "function";
+      const allowedInvestmentType = ["financial_assets", "other_assets", "not_assessed"].includes(inputs.investment_activity_type)
+        ? inputs.investment_activity_type
+        : (PRESETS[allowedProfile]?.investmentType || "not_assessed");
       const allowedPolicy = ["split", "all_operating"].includes(inputs.financing_liability_policy)
         ? inputs.financing_liability_policy
         : "split";
@@ -2490,6 +2943,7 @@
       return {
         profile: allowedProfile,
         invests: Boolean(inputs.invests_in_assets_as_main_business_activity),
+        investmentType: allowedInvestmentType,
         finances: Boolean(inputs.provides_financing_to_customers_as_main_business_activity),
         sfp: allowedSfp,
         expense: allowedExpense,
@@ -2510,6 +2964,7 @@
       const data = normaliseWorkingFile(payload);
       $("#entityProfile").value = data.profile;
       $("#investsMain").checked = data.invests;
+      $("#investmentType").value = data.investmentType;
       $("#financesMain").checked = data.finances;
       $("#sfpPresentation").value = data.sfp;
       $("#financingPolicy").value = data.financingPolicy;
@@ -2567,15 +3022,15 @@
 
     function exportCsv() {
       const result = analyse();
-      const rows = [["Category", "Line item", "Amount", "Unit", "Confidence"]];
+      const rows = [["Category", "Line item", "Amount", "Unit", "Confidence", "Rationale", "Technical basis"]];
       RULES.categories.forEach(category => {
         result.categories[category].forEach(item => {
-          rows.push([category, item.label, item.amount, result.data.unit, item.confidence]);
+          rows.push([category, item.label, item.amount, result.data.unit, item.confidence, item.why, item.source]);
         });
       });
-      rows.push(["subtotal", "Operating profit / (loss)", result.operatingProfit, result.data.unit, "rule"]);
-      if (!result.omitPbfit) rows.push(["subtotal", "Profit / (loss) before financing and income taxes", result.pbfit, result.data.unit, "rule"]);
-      rows.push(["total", "Profit / (loss)", result.profit, result.data.unit, "rule"]);
+      rows.push(["subtotal", "Operating profit / (loss)", result.operatingProfit, result.data.unit, "rule", "Illustrative subtotal from mapped operating lines", RULES.sources.subtotals]);
+      if (!result.omitPbfit) rows.push(["subtotal", "Profit / (loss) before financing and income taxes", result.pbfit, result.data.unit, "rule", "Illustrative subtotal from mapped operating and investing lines", RULES.sources.subtotals]);
+      rows.push(["total", "Profit / (loss)", result.profit, result.data.unit, "rule", "Total of all five categories", RULES.sources.subtotals]);
       download("ifrs18-presentation-pathfinder.csv", rows.map(row => row.map(csvCell).join(",")).join("\n"), "text/csv;charset=utf-8");
     }
 
@@ -2633,8 +3088,20 @@
         run: () => testCategory({ invests: false, amounts: { interest_income_other: 10 } }, "interest_income_other", "investing")
       },
       {
-        name: "Surplus cash deposit interest remains investing for an investing main business",
-        run: () => testCategory({ invests: true, amounts: { interest_income_surplus_cash: 10 } }, "interest_income_surplus_cash", "investing")
+        name: "Cash-equivalent income is operating for a financial-asset investing main business",
+        run: () => testCategory({ invests: true, investmentType: "financial_assets", amounts: { interest_income_surplus_cash: 10 } }, "interest_income_surplus_cash", "operating")
+      },
+      {
+        name: "Cash-equivalent income remains investing for a property-investing main business",
+        run: () => testCategory({ invests: true, investmentType: "other_assets", amounts: { interest_income_surplus_cash: 10 } }, "interest_income_surplus_cash", "investing")
+      },
+      {
+        name: "Equity-method associate and JV results remain investing",
+        run: () => testCategory({ invests: true, amounts: { share_of_profit_associates_jvs: 10 } }, "share_of_profit_associates_jvs", "investing")
+      },
+      {
+        name: "Eligible FVTPL associate and JV returns follow the investing-main-business assumption",
+        run: () => testCategory({ invests: true, amounts: { associate_jv_fvtpl_returns: 10 } }, "associate_jv_fvtpl_returns", "operating")
       },
       {
         name: "Borrowing expense is financing under the split policy",
@@ -2665,8 +3132,8 @@
         run: () => buildDisclosures(testData({ expense: "function" }))[0].status === "Triggered"
       },
       {
-        name: "MPM selection triggers the single-note output",
-        run: () => buildDisclosures(testData({ mpm: true }))[1].status === "Triggered"
+        name: "MPM selection triggers screening and single-note guidance",
+        run: () => buildDisclosures(testData({ mpm: true }))[1].status === "Screening required"
       },
       {
         name: "Blank and zero inputs produce finite totals",
@@ -2701,6 +3168,22 @@
         run: () => buildDisclosures(testData({ indirect: true }))[3].points.some(point => point.includes("starts from operating profit or loss"))
       },
       {
+        name: "Cash flow disclosure uses the amended IAS 7 investing default for receipts",
+        run: () => buildDisclosures(testData())[3].points.some(point => point.includes("received are investing cash flows"))
+      },
+      {
+        name: "All five profit-or-loss categories are retained",
+        run: () => RULES.categories.length === 5 && RULES.categories.includes("tax") && RULES.categories.includes("discontinued")
+      },
+      {
+        name: "Every classification line carries a technical basis",
+        run: () => LINE_ITEM_RULES.every(item => typeof item.source === "string" && item.source.length > 0)
+      },
+      {
+        name: "Positive expense inputs trigger a sign warning",
+        run: () => buildWarnings(testData({ amounts: { interest_expense_borrowings: 10 } })).some(warning => warning.text.includes("normally entered as an expense"))
+      },
+      {
         name: "PCC profile triggers reporting-perimeter action",
         run: () => CHECKLIST_RULES.filter(rule => rule.test(testData({ profile: "pcc" }))).some(rule => rule.text.includes("financial-statement perimeter"))
       },
@@ -2714,6 +3197,7 @@
           const restored = normaliseWorkingFile({
             inputs: {
               entity_profile: "bank",
+              investment_activity_type: "financial_assets",
               operating_expense_presentation: "nature",
               sfp_presentation: "liquidity",
               financing_liability_policy: "all_operating",
@@ -2721,7 +3205,7 @@
               line_items: { revenue: 321 }
             }
           });
-          return restored.profile === "bank" && restored.amounts.revenue === 321;
+          return restored.profile === "bank" && restored.investmentType === "financial_assets" && restored.amounts.revenue === 321;
         }
       },
       {
@@ -2740,7 +3224,7 @@
     function testData(overrides = {}) {
       const amounts = Object.fromEntries(LINE_ITEM_RULES.map(item => [item.id, 0]));
       return {
-        profile: "custom", invests: false, finances: false, sfp: "current_noncurrent",
+        profile: "custom", invests: false, investmentType: "not_assessed", finances: false, sfp: "current_noncurrent",
         expense: "nature", financingPolicy: "split", indirect: true, mpm: false,
         mpmLabel: "Adjusted operating profit", eps: false, firstYear: true,
         interim: false, xbrl: false, unit: "units",
